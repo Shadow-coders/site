@@ -28,14 +28,12 @@ app.post('/api', (req,res) => {
  // pasport 
   passport.serializeUser(function (user,cb)  {
      cb(null, user);
-     db.set('user_' + user.id, user)
   });
  
  
  
   passport.deserializeUser(function (id,cb) {
      cb(null, id);
-     db.delete('user_' + id)
   });
  
  passport.use(new DiscordStrategy({
@@ -47,7 +45,6 @@ app.post('/api', (req,res) => {
  
  async function(accessToken, refreshToken, profile, cb) {
    cb(null, profile)
-  await db.set('last_user', profile)
   const guilds = profile.guilds
   if(guilds.length >= 100) {
       return;
