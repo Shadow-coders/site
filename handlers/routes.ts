@@ -17,7 +17,10 @@ client.add = Add
 file = file.default
 //console.log(file)
 if(!file.type) file.type = 'get'
-app[file.type](file.name, (req:any,res:any,next:Function) => file.execute(req,res,client,next))
+app[file.type](file.name, (req:any,res:any,next:Function) => file.execute(req,res,client,next), file.name == '/auth/discord/callback' ?function(
+    req:any, res:any) {
+        res.redirect('/') // Successful auth
+    }  : function () {})
 }
     return;
 }

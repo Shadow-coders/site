@@ -5,6 +5,8 @@ import ejs from 'ejs'
 import config from './config'
 import ModuleHandler from './handlers/modules'
 import RouteHandler from './handlers/routes'
+import passport from 'passport'
+import PassportHandler from './handlers/passport'
 //import logger from './logger'
 const { debug, error, log, warn } = console
 //const   = express
@@ -19,6 +21,7 @@ app.on('mount', () => {
 app.listen(config.port, () => {
     debug('Listening on ' + config.port + `\n ${config.prottocal}${config.domain}${config.usesport ?  ':' +  config.port + '/': '/'} `)
 })
+PassportHandler(app)
 ModuleHandler(app)
 const Add = async (path:any, prams: any) => {
     const data:any = fs.readFileSync(__dirname +`/views/${path}`).toString()
@@ -26,7 +29,13 @@ const Add = async (path:any, prams: any) => {
     return await ejs.render(data, prams)
 }
 RouteHandler(app,client,Add) 
-
+app.get('/auth/discord', passport.authenticate('discord'));
+	app.get('/auth/discord/callback', passport.authenticate('discord', {
+		failureRedirect: '/'
+	}), function(
+		req:any, res:any) {
+			res.redirect('/') // Successful auth
+		});
 // pp.get('/e', (req:any,res:any) => {
 //     //res.send()
 //     throw new Error('e');

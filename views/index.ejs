@@ -152,10 +152,12 @@ form.d-flex button:hover {
     </head>
     <body>
         <!--HEADER-->
+        <%- headers -%>
+      
         <!-- END_HEADER -->
        <!--MAIN BODY-->
         <div class="d-flex justify-content-center head">
-           <img src="https://cdn.discordapp.com/avatars/765578525818093608/010324076be471be8da246f395e77650.webp?size=1024" alt="shadow" width="80" height="80" style="border-radius: 50px;"> 
+           <img src="<%=shadow.displayAvatarURL({ dynamic: true })%>" alt="shadow" width="80" height="80" style="border-radius: 50px;"> 
               <h1> ‏‏‎ ‎‏‏‎‎<b>Shadow</b></h1>
         </div>
         <div class="d-flex justify-content-center subtext">
