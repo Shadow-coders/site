@@ -1,6 +1,0 @@
-# gitnore
-.env
-node_modules
-api
-config.js
-# note to not  upload these files

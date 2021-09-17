@@ -76,5 +76,5 @@ typings/
 .fusebox/
 # gitnore
 api
-config.js
+config.ts
 # note to not  upload these files
