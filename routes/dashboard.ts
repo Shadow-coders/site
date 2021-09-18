@@ -10,7 +10,6 @@ export default {
 			id: user.id,
 			guilds: req.user.guilds,
 		    client,
-			perms: require('discord-permissions'),
 			req: req,
             config,
 		})

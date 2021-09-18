@@ -168,25 +168,17 @@ form.d-flex button:hover {
  <% guilds.filter(g => {
 const guild = client.guilds.cache.get(g.id);
 return g ? true : false;
- }).).forEach(guild => { %> <% 
- 
-
-  %>
-      <% if (myguilds.includes(guild.id) === true) { %>
-       <a href="https://Shaodws-site-OWO.nongmerbot.repl.co/dashboard/<%=guild.id%>"> <%= guild.name %>
-       <% if (guild.icon === null) { %>
-       <svg height="30" width="100">
-  <text x="0" y="15" fill="grey" style="background:black;border-radius: 50px;border-color: green;border-style: solid;"> <%=guild.name %> </text>
-</svg>
-        <% } else { %>
-        <img src="https://cdn.discordapp.com/icons/<%=guild.id%>/<%=guild.icon%>.webp" style="border-radius: 50px;border-color: green;border-style: solid;">
-        <% } %> 
-        </a>      
-<%  } %>
-<%   } else { %>
-<h1></h1>
-<% } %>
-      <% }) %>
+ }).map((g) => client.guilds.cache.get(g.id)).forEach(g => {  %>
+if(!g.members.cache.get(user.id).permissions.has('MANAGE_SERVER')) { %>
+   <h1></h1>
+    <% 
+return;
+} %>
+<a href="<%=config.makeURL()%>/dashboard/<%=g.id%>"> <%= g.name %> 
+<% if(g.icon) {%>  <img src="<%g.iconURL()%>" style="border-radius: 50px;border-color: green;border-style: solid;"> <%}%>
+<%if(!g.icon) {%> <h1><%=g.nameAcronym%></h1> <%}%>
+</a>
+    <% }) %>
 
         </center>
         </main>
