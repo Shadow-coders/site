@@ -48,11 +48,11 @@ if(profile.guilds) {
         }
         app.get('/auth/discord', passport.authenticate('discord'));
 	app.get('/auth/discord/callback', passport.authenticate('discord', {
-		failureRedirect: '/error'
+		failureRedirect: '/error',
 	}), function(
 		req:any, res:any) {
 			console.log('Good')
-			res.redirect('/user') // Successful auth
+			res.redirect('/') // Successful auth
 		});
         
 }

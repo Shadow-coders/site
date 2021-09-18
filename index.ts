@@ -1,4 +1,5 @@
 import Client from './structures/client'
+import Discord from 'discord.js'
 import express from 'express'
 import * as fs from 'fs'
 import ejs from 'ejs'
@@ -11,8 +12,15 @@ import PassportHandler from './handlers/passport'
 const { debug, error, log, warn } = console
 //const   = express
 const app = express()
-const client = new Client()
+const shadow = new Discord.Client({ intents: ['GUILDS', 'GUILD_MEMBERS', 'DIRECT_MESSAGES', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES', 'GUILD_INVITES']})
+shadow.login(config.shadow_token)
+shadow.on('ready', () => {
+  debug('Shadow bot connected for [GUILDS]')
+  shadow.guilds.cache.forEach((g:any) => g.members.fetch())
+})
+const client:any = new Client()
 client.connect()
+client.shadow = shadow;
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.on('mount', () => {

@@ -92,8 +92,23 @@ form.d-flex button:hover {
     width: 40%;
     color: rgb(255, 255, 255, .55);
 }
-
-
+.center h1 {
+align-self: center;
+text-align: center !important;
+align-items: center;
+vertical-align: middle;
+}
+.center p {
+align-self: center;
+text-align: center !important;
+align-items: center;
+vertical-align: middle;
+}
+.center img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* MEDIA */
 
 @media screen and (max-width: 967px) {
@@ -152,38 +167,35 @@ form.d-flex button:hover {
     </head>
     <body>
         <!--HEADER-->
-        <%- include('header'); -%>
+        <!--  include('header'); > -->
         
        <!--MAIN BODY-->
-        <div class="d-flex justify-content-center head">
-              <h1> ‏‏‎ ‎‏‏‎‎<b>Guild</b></h1>
-              <p> enter the guild id of which you would like to use the dashboard on! </p>
-              
-     <div class="d-flex justify-content-center subtext">
-           <h1> guilds </h1>
-        </div>
-
-    <center> 
-      <main>
+        <div class='center'>
+              <h1> ‏‏‎ ‎‏‏‎‎<b>Guilds</b></h1> <br>
+              <p> What guild?</P>
+                </div>
+                <br>
+    
+   
  <% guilds.filter(g => {
-const guild = client.guilds.cache.get(g.id);
-return g ? true : false;
- }).map((g) => client.guilds.cache.get(g.id)).forEach(g => {  %>
-if(!g.members.cache.get(user.id).permissions.has('MANAGE_SERVER')) { %>
+    const guild = client.guilds.cache.get(g.id);
+    return guild ? true : false;
+    }).map((g) => client.guilds.cache.get(g.id)).filter((g) => client.guilds.cache.get(g.id).members.cache.get(id)).forEach((g,i) => { 
+     if(!g.members.cache.get(id).permissions.has('MANAGE_GUILD')) { %>
    <h1></h1>
     <% 
 return;
 } %>
-<a href="<%=config.makeURL()%>/dashboard/<%=g.id%>"> <%= g.name %> 
-<% if(g.icon) {%>  <img src="<%g.iconURL()%>" style="border-radius: 50px;border-color: green;border-style: solid;"> <%}%>
-<%if(!g.icon) {%> <h1><%=g.nameAcronym%></h1> <%}%>
+<div id='<%=i%>' style="display: inline-block;">
+   
+<a href="<%=config.makeURL()%>dashboard/<%=g.id%>"> 
+    ‎‏‏‎‎<b><%= g.name %></b>  <br>
+<%if(g.icon) {%>  <img src="<%=g.iconURL()%>" style="border-radius: 50px;border-color: green;border-style: solid;"> <%}%>
 </a>
+</div>
     <% }) %>
 
-        </center>
-        </main>
-              </form>
-        </div>
+  
         
 <!-- end of BODY -->
        <!--JS-->
