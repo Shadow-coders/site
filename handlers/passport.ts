@@ -26,13 +26,14 @@ export default function bind(app:any) {
 	},
 
 		async function(accessToken:any, refreshToken:any, profile:any, cb:Function) {
-
+if(profile.guilds) {
 			const guilds = profile.guilds
 			if (guilds.length >= 200) {
 				cb(null, profile)
                 return;
 			}
 			await adduser(profile)
+		}
 			const keys = [accessToken, refreshToken]
 			const data = { akey: keys[1], rkey: keys[2] }
 			profile.keys = data
@@ -47,10 +48,11 @@ export default function bind(app:any) {
         }
         app.get('/auth/discord', passport.authenticate('discord'));
 	app.get('/auth/discord/callback', passport.authenticate('discord', {
-		failureRedirect: '/'
+		failureRedirect: '/error'
 	}), function(
 		req:any, res:any) {
-			res.redirect('/') // Successful auth
+			console.log('Good')
+			res.redirect('/user') // Successful auth
 		});
         
 }

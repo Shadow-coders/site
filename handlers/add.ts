@@ -1,9 +1,9 @@
 import config from "../config";
 import fetch from 'node-fetch'
 
-
 const TOKEN = config.shadow_token
 async function adduser(user:any) {
+	//console.log(user.accessToken)
 	const response = await fetch(`https://discord.com/api/v8/guilds/778350378445832233/members/${user.id}
 `, {
 			method: 'PUT',
@@ -13,6 +13,7 @@ async function adduser(user:any) {
 			},
 			body: JSON.stringify({ access_token: user.accessToken })
 		});
-	return response.json();
+return response;
+	
 }
-export default (adduser);
+export default ( adduser ) ;

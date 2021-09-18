@@ -21,8 +21,8 @@ app.on('mount', () => {
 app.listen(config.port, () => {
     debug('Listening on ' + config.port + `\n ${config.prottocal}${config.domain}${config.usesport ?  ':' +  config.port + '/': '/'} `)
 })
-PassportHandler(app)
 ModuleHandler(app)
+PassportHandler(app)
 const Add = async (path:any, prams: any) => {
     const data:any = fs.readFileSync(__dirname +`/views/${path}`).toString()
   //  console.log(data)
