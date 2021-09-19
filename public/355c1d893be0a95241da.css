@@ -1,0 +1,4014 @@
+.Landing {
+    background-color: #24252a;
+  }
+  .Landing > * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Open Sans;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .Landing h1 {
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 45px;
+    color: #fff;
+    text-transform: none;
+  }
+  .Landing p {
+    opacity: 0.48;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    text-align: start;
+    line-height: 28px;
+  }
+  .Landing h2 {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+    margin-bottom: 0px;
+    padding-top: 0;
+    text-transform: none;
+  }
+  @media screen and (max-width: 560px) {
+    .Landing > h1 {
+      font-size: 28px;
+    }
+  }
+  .SelectContainer {
+    font-family: 'Open Sans', Helvetica, arial, sans-serif;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+  }
+  .SelectContainer .SelectOptionsContainer {
+    overflow: hidden;
+  }
+  .SelectContainer .SelectOptions {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #2b2f33;
+    border-radius: 0 0 3px 3px;
+    border: 1px solid #1a1a1a;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    visibility: hidden;
+    max-height: 375px;
+    overflow-y: scroll;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+  }
+  .SelectContainer .SelectOption {
+    padding: 0 0 0 15px;
+    cursor: pointer;
+    min-height: 50px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .SelectContainer .SelectOption:hover {
+    background-color: #202326;
+  }
+  .SelectContainer .SelectOption.selected {
+    background-color: #1c1f22;
+  }
+  .SelectContainer.open .SelectArrow {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  .SelectContainer.open .SelectArrow img {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+  .SelectContainer.open .SelectOptions {
+    visibility: visible;
+  }
+  .Select {
+    position: relative;
+    background: #2b2f33;
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid #1a1a1a;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: border 250ms ease-out;
+    -moz-transition: border 250ms ease-out;
+    -o-transition: border 250ms ease-out;
+    -ms-transition: border 250ms ease-out;
+    transition: border 250ms ease-out;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .Select .lds-ring {
+    position: absolute;
+    left: 10px;
+    top: 17px;
+  }
+  .Select:hover {
+    border: 1px solid #000;
+  }
+  .Select:hover .SelectArrow {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  .Select .SelectValue {
+    margin-left: 15px;
+    position: relative;
+    width: 75%;
+  }
+  .Select .SelectValueInput {
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+    font-weight: inherit;
+  }
+  .Select .SelectValuePlaceholder {
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    position: absolute;
+  }
+  .Select .SelectArrow {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-inline-end: 15px;
+    margin-left: auto;
+    opacity: 0.6;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+  }
+  .Select .SelectReset {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-inline-end: 15px;
+    margin-left: auto;
+    opacity: 0.6;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+  }
+  .RadioGroup {
+    font-family: 'Open Sans', Helvetica, arial, sans-serif;
+    color: #fff;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .RadioGroup .RadioItem {
+    background: #2b2f33;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #1a1a1a;
+    min-height: 50px;
+    padding: 10px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    margin-bottom: 10px;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 14px;
+  }
+  .RadioGroup .RadioItem .RadioCheckBox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    margin-bottom: auto;
+  }
+  .RadioGroup .RadioItem .RadioCheckBox img {
+    width: 14px;
+    height: 14px;
+    visibility: hidden;
+  }
+  .RadioGroup .RadioItem .RadioValue {
+    margin-left: 10px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .RadioGroup .RadioItem .RadioValue .RadioValueTitle {
+    height: 25px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .RadioGroup .RadioItem .RadioValue .RadioValueDescription {
+    font-weight: 300;
+    opacity: 0.4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+  }
+  .RadioGroup .RadioItem.selected {
+    background-color: #62d3f5;
+    color: #fff;
+    border-color: #62d3f5;
+  }
+  .RadioGroup .RadioItem.selected .RadioValueDescription {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  .RadioGroup .RadioItem.selected .RadioCheckBox {
+    border-color: #fff;
+    background-color: #fff;
+  }
+  .RadioGroup .RadioItem.selected .RadioCheckBox img {
+    visibility: visible;
+  }
+  .SearchSelectInput {
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+    background: none;
+    border: none;
+    color: #fff;
+    width: 80%;
+    margin-left: 15px;
+    z-index: 1000;
+  }
+  .SearchSelectPlaceholder {
+    position: absolute;
+    left: 15px;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+  }
+  .SearchSelectPicture {
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+  }
+  .SearchSelectPicture img {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+  }
+  .SearchSelectValue {
+    margin-left: 8px;
+  }
+  .SelectSearchOptionPicture {
+    width: 25px;
+    height: 25px;
+  }
+  .SelectSearchOptionPicture img {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+  }
+  .SelectSearchOptionName {
+    margin-left: 8px;
+  }
+  .SearchSelectCross {
+    margin-left: auto;
+    margin-inline-end: 15px;
+    cursor: pointer;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: auto 5px;
+  }
+  .SearchSelectCross:hover {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  .textAreaContainer {
+    width: 100%;
+    min-height: 150px;
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .textAreaContainer .textAreaInner {
+    position: relative;
+  }
+  .textAreaContainer .textAreaError {
+    color: #f04747;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  .textArea {
+    width: 100%;
+    font-family: 'Open Sans', sans-serif, Helvetica, arial, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid #1a1a1a;
+    background: #2b2f33;
+    border-radius: 3px;
+    padding: 15px 15px 35px 15px;
+    font-weight: 500;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 150px;
+    -webkit-transition: border 250ms ease-out;
+    -moz-transition: border 250ms ease-out;
+    -o-transition: border 250ms ease-out;
+    -ms-transition: border 250ms ease-out;
+    transition: border 250ms ease-out;
+    resize: none;
+  }
+  .textArea.borderRed {
+    border: 1px solid #f04848;
+  }
+  .textArea:hover {
+    border-color: #000;
+  }
+  .textArea:focus {
+    border-color: #000;
+  }
+  .textArea.textAreaWithError {
+    border-color: #f04747;
+  }
+  .textArea.textAreaWithError:hover {
+    border: 1px solid #f04747;
+  }
+  .textArea.textAreaWithError:focus {
+    border-color: #000;
+  }
+  .textAreaWordCount {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  }
+  .textAreaWordCount.red {
+    color: #f04848;
+  }
+  .textAreaMentions {
+    position: absolute;
+    width: 100%;
+    background: #23272a;
+    border-radius: 3px 3px 0px 0px;
+    border: 1px solid #000;
+    border-bottom: 0px;
+    bottom: 99%;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    visibility: hidden;
+  }
+  .textAreaMentions.open {
+    visibility: visible;
+  }
+  .textAreaMentions .textAreaMention {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .textAreaMentions .textAreaMention.selected {
+    background: #2d3236;
+  }
+  .textAreaMentions .textAreaMention:hover {
+    background: #2d3236;
+  }
+  .textAreaMentions .textAreaMentionsTitle {
+    padding: 6px 10px;
+    margin: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .textAreaMentions .textAreaMentionsTitle .textAreaMentionsTitleMatch span {
+    text-transform: none;
+    color: #fff;
+    font-weight: 400;
+  }
+  .textAreaMentions .textAreaMentionHint {
+    margin-left: auto;
+  }
+  .textAreaMentions .textAreaMentionIcon {
+    width: 25px;
+    height: 25px;
+    -webkit-background-size: 25px;
+    -moz-background-size: 25px;
+    background-size: 25px;
+    border-radius: 50%;
+    background-color: #000;
+    margin-inline-end: 10px;
+    border-color: 2px solid #000;
+  }
+  .textAreaMentions .textAreaMentionValue {
+    color: #fff;
+  }
+  .flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+  }
+  .flexRow {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  .flexColumn {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  @media (max-width: 640px) {
+    .mobileFlexRow {
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      -o-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileFlexColumn {
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -o-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+  .flexAlignCenter {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .flexAlignStart {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -o-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .flexAlignEnd {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -o-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+  }
+  .flexJustifyCenter {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  .flexJustifyStart {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -o-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  .flexJustifyEnd {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -o-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+  .flexChildRight {
+    margin-left: auto;
+  }
+  .flexChildLeft {
+    margin-right: auto;
+  }
+  .flexChildTop {
+    margin-bottom: auto;
+  }
+  .flexChildBottom {
+    margin-top: auto;
+  }
+  .top40 {
+    margin-top: 40px;
+  }
+  .top20 {
+    margin-top: 20px;
+  }
+  .top30 {
+    margin-top: 30px;
+  }
+  .top10 {
+    margin-top: 10px;
+  }
+  .top0 {
+    margin-top: 0;
+  }
+  .flexDirectionRow {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  .flexDirectionColumnn {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .flexDirectionRowReverse {
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -o-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+  .flexDirectionColumnReverse {
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -o-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  @media (max-width: 640px) {
+    .mobileFlexDirectionRow {
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      -o-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileFlexDirectionColumnn {
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -o-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileFlexDirectionRowReverse {
+      -webkit-box-direction: reverse;
+      -moz-box-direction: reverse;
+      -o-box-direction: reverse;
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      -o-box-orient: horizontal;
+      -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileFlexDirectionColumnReverse {
+      -webkit-box-direction: reverse;
+      -moz-box-direction: reverse;
+      -o-box-direction: reverse;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -o-box-orient: vertical;
+      -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileTop40 {
+      margin-top: 40px;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileTop20 {
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileTop10 {
+      margin-top: 10px;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileTop0 {
+      margin-top: 0;
+    }
+  }
+  .bottom40 {
+    margin-bottom: 40px;
+  }
+  .bottom20 {
+    margin-bottom: 20px;
+  }
+  .bottom10 {
+    margin-bottom: 10px;
+  }
+  .bottom0 {
+    margin-bottom: 0;
+  }
+  @media (max-width: 640px) {
+    .mobileBottom40 {
+      margin-bottom: 40px;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileBottom20 {
+      margin-bottom: 20px;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileBottom10 {
+      margin-bottom: 10px;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileBottom0 {
+      margin-bottom: 0;
+    }
+  }
+  .left0 {
+    margin-inline-start: 0;
+  }
+  .left3 {
+    margin-inline-start: 3px;
+  }
+  .left5 {
+    margin-inline-start: 5px;
+  }
+  .left7 {
+    margin-inline-start: 7px;
+  }
+  .left10 {
+    margin-inline-start: 10px;
+  }
+  .left20 {
+    margin-inline-start: 20px;
+  }
+  @media (max-width: 640px) {
+    .mobileLeft0 {
+      margin-inline-start: 0;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileLeft10 {
+      margin-inline-start: 10px;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileLeft20 {
+      margin-inline-start: 20px;
+    }
+  }
+  .right0 {
+    margin-inline-end: 0;
+  }
+  .right10 {
+    margin-inline-end: 10px;
+  }
+  .right20 {
+    margin-inline-end: 20px;
+  }
+  @media (max-width: 640px) {
+    .mobileRight0 {
+      margin-inline-end: 0;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileRight10 {
+      margin-inline-end: 10px;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileRight20 {
+      margin-inline-end: 20px;
+    }
+  }
+  @media (max-width: 640px) {
+    .mobileHidden {
+      display: none;
+    }
+  }
+  .flexWrap {
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .flexNoWrap {
+    -webkit-box-lines: single;
+    -moz-box-lines: single;
+    -o-box-lines: single;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  .flex1 {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  .flex2 {
+    -webkit-box-flex: 2;
+    -moz-box-flex: 2;
+    -o-box-flex: 2;
+    box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+  }
+  .flex3 {
+    -webkit-box-flex: 3;
+    -moz-box-flex: 3;
+    -o-box-flex: 3;
+    box-flex: 3;
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+  }
+  .flex4 {
+    -webkit-box-flex: 4;
+    -moz-box-flex: 4;
+    -o-box-flex: 4;
+    box-flex: 4;
+    -webkit-flex: 4;
+    -ms-flex: 4;
+    flex: 4;
+  }
+  .ModeratorLogWebhook {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  .ModeratorLogWebhook.empty {
+    padding: 15px;
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    border-style: dashed;
+    border-color: rgba(255,255,255,0.5);
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .AutomatedAction {
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-radius: 3px;
+    padding: 15px;
+    font-size: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #2b2f33;
+    border: 1px solid #23272a;
+  }
+  .AutomatedAction.Placeholder {
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    border-style: dashed;
+    border-color: rgba(255,255,255,0.5);
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .AutomatedAction .AutomatedActionMoveButton {
+    visibility: hidden;
+    background-color: rgba(0,0,0,0.5);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 26px;
+    height: 26px;
+  }
+  .AutomatedAction .AutomatedActionMoveButton img {
+    width: 9px;
+    height: 9px;
+  }
+  .AutomatedAction .AutomatedActionMoveButton.Down {
+    bottom: -13px;
+    left: -13px;
+  }
+  .AutomatedAction .AutomatedActionMoveButton.Down img {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+  }
+  .AutomatedAction .AutomatedActionMoveButton.Up {
+    top: -13px;
+    left: -13px;
+  }
+  .AutomatedAction .AutomatedActionMoveButton.Up img {
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+  }
+  .AutomatedAction:hover .AutomatedActionCross {
+    visibility: visible;
+  }
+  .AutomatedAction:hover .AutomatedActionMoveButton {
+    visibility: visible;
+  }
+  .AutomatedActionLine {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .AutomatedActionLinePortion {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    line-height: 1;
+    font-weight: 600;
+    padding: 0 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .AutomatedActionCross {
+    position: absolute;
+    visibility: hidden;
+    width: 30px;
+    height: 30px;
+    background-color: #f04848;
+    border: 1px solid #23272a;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    top: -15px;
+    right: -15px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .AutomatedActionCross img {
+    width: 8px;
+    height: 8px;
+  }
+  .CheckPlus {
+    border-radius: 3px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    cursor: pointer;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding: 5px;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    -webkit-transition: opacity 170ms ease-out;
+    -moz-transition: opacity 170ms ease-out;
+    -o-transition: opacity 170ms ease-out;
+    -ms-transition: opacity 170ms ease-out;
+    transition: opacity 170ms ease-out;
+    background-color: #23272a;
+  }
+  .CheckPlus .CheckPlusText {
+    color: #fff;
+    margin: auto 3px;
+    font-weight: 300;
+    text-transform: none;
+  }
+  .CheckPlus:hover {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  .ModeratorDeleteInfractionButtons {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -o-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+  .ModeratorDeleteInfractionButtons button {
+    min-width: 100px;
+  }
+  .ChannelSelector {
+    width: 100%;
+    background: #2b2f33;
+    border-radius: 3px;
+    border: 1px solid #000;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .ChannelSelectorInner {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 6px;
+  }
+  .ChannelsList {
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .ChannelsListItem {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    border-radius: 3px;
+    height: 22px;
+    max-width: 200px;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 6px;
+  }
+  .ChannelsListItem .ChannelName {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0px 5px;
+  }
+  .ChannelsListItem .ChannelCross {
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-inline-start: 1px solid #000;
+    padding: 0 5px 0 5px;
+    color: #000;
+    opacity: 0.3;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    cursor: pointer;
+  }
+  .ChannelsListItem .ChannelCross:hover {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  .ChannelAdd {
+    width: 24px;
+    height: 24px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid;
+    border-color: #666;
+    color: #ccc;
+    font-weight: 600;
+    margin: 6px;
+  }
+  .ChannelAdd span {
+    display: block;
+    margin: 0;
+    font-size: 10px;
+    line-height: 1px;
+  }
+  .ChannelAddContainer {
+    color: #000;
+    position: relative;
+  }
+  .ChannelSelectorListContainer {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 200px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 5px;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    -moz-transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    -o-transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    -ms-transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    z-index: 100;
+    -webkit-box-shadow: 0 1px 3px #000;
+    box-shadow: 0 1px 3px #000;
+    overflow: hidden;
+    overflow-y: scroll;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transition-delay: 0s, 0s, 0.3s;
+    -moz-transition-delay: 0s, 0s, 0.3s;
+    -o-transition-delay: 0s, 0s, 0.3s;
+    -ms-transition-delay: 0s, 0s, 0.3s;
+    transition-delay: 0s, 0s, 0.3s;
+    -ms-overflow-style: none;
+  }
+  .ChannelSelectorListContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .ChannelSelectorListContainer.ChannelAdd-enter {
+    -webkit-transform: translateY(-1em);
+    -moz-transform: translateY(-1em);
+    -o-transform: translateY(-1em);
+    -ms-transform: translateY(-1em);
+    transform: translateY(-1em);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  .ChannelSelectorListContainer.ChannelAdd-enter.ChannelAdd-enter-active {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  .ChannelSelectorListContainer.ChannelAdd-leave {
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    -webkit-transform: translateY(-1em);
+    -moz-transform: translateY(-1em);
+    -o-transform: translateY(-1em);
+    -ms-transform: translateY(-1em);
+    transform: translateY(-1em);
+  }
+  .ChannelSelectorListContainer .ChannelSelectorList {
+    list-style: none;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .ChannelSelectorListContainer .ChannelSelectorListItem {
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .ChannelSelectorListContainer .ChannelSelectorListItem:hover {
+    background-color: #f2f2f2;
+  }
+  .leaderboardBannerButtonContainer {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transition: opacity 175ms ease-out;
+    -moz-transition: opacity 175ms ease-out;
+    -o-transition: opacity 175ms ease-out;
+    -ms-transition: opacity 175ms ease-out;
+    transition: opacity 175ms ease-out;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  @media (max-width: 640px) {
+    .leaderboardBannerButtonContainer {
+      right: 5%;
+    }
+  }
+  .leaderboardBannerButtonContainer button {
+    margin-inline-start: 10px;
+  }
+  .leaderboardHeader {
+    margin-top: 0 !important;
+    width: 100%;
+    max-width: 1440px;
+    height: 260px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    padding: 30px;
+    position: relative;
+  }
+  @media (max-width: 640px) {
+    .leaderboardHeader {
+      margin-bottom: 20px;
+    }
+  }
+  .leaderboardHeader:hover .leaderboardBannerButtonContainer {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  .leaderboardHeader:hover .leaderboardGuildResetButton {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  .leaderboardHeaderGuildInfo {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .leaderboardHeaderGuildInfo {
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      -o-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -o-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  .leaderboardBody {
+    width: 100%;
+    max-width: 1440px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 30px;
+  }
+  @media (max-width: 640px) {
+    .leaderboardBody {
+      -webkit-box-direction: reverse;
+      -moz-box-direction: reverse;
+      -o-box-direction: reverse;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -o-box-orient: vertical;
+      -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+      padding: 0px;
+    }
+  }
+  .leaderboardPlayersListContainer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    max-width: 75%;
+    -webkit-flex-shrink: 2;
+    flex-shrink: 2;
+    -webkit-box-flex: 2;
+    -moz-box-flex: 2;
+    -o-box-flex: 2;
+    -ms-box-flex: 2;
+    box-flex: 2;
+    -webkit-flex-grow: 2;
+    flex-grow: 2;
+    background-color: #3e4246;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  @media (max-width: 640px) {
+    .leaderboardPlayersListContainer {
+      max-width: 100%;
+      background: transparent;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+  .leaderboardPlayersList {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 16px 20px;
+  }
+  @media (max-width: 640px) {
+    .leaderboardPlayersList .leaderboardPlayer {
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -o-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+    .leaderboardPlayersList .leaderboardPlayer .leaderboardPlayerResetButtonContainer {
+      display: none;
+    }
+    .leaderboardPlayersList .leaderboardPlayer .leaderboardPlayerStats {
+      display: none;
+    }
+  }
+  .leaderboardPlayer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 55px;
+    padding: 35px 0px;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .leaderboardPlayer .leaderboardPlayerResetButtonContainer {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    margin-inline-start: 15px;
+    -webkit-transition: opacity 175ms ease-out;
+    -moz-transition: opacity 175ms ease-out;
+    -o-transition: opacity 175ms ease-out;
+    -ms-transition: opacity 175ms ease-out;
+    transition: opacity 175ms ease-out;
+  }
+  .leaderboardPlayer:hover .leaderboardPlayerResetButtonContainer {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  .leaderboardPlayer .leaderboardPlayerLeft {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    max-width: 65%;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 0 1 65%;
+    -ms-flex: 0 1 65%;
+    flex: 0 1 65%;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .leaderboardPlayer .leaderboardPlayerLeft {
+      width: 100%;
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -o-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
+    }
+  }
+  .leaderboardPlayerStatBlock {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    height: 50px;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-inline-start: 30px;
+  }
+  .leaderboardPlayerStatBlock .leaderboardPlayerStatName {
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Poppins';
+    line-height: 1;
+    margin-bottom: 1px;
+    color: #85878a;
+    white-space: nowrap;
+  }
+  .leaderboardPlayerStatBlock .leaderboardPlayerStatValue {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    line-height: 1;
+    margin-top: 5px;
+    color: #fff;
+  }
+  .leaderboardRank {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 0 0 35px;
+    -ms-flex: 0 0 35px;
+    flex: 0 0 35px;
+    background-color: #50555a;
+    height: 35px;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    font-weight: 600;
+    font-family: 'Poppins';
+    color: #fff;
+  }
+  .leaderboardRankFirst {
+    background-color: #da9e3b;
+  }
+  .leaderboardRankSecond {
+    background-color: #989898;
+  }
+  .leaderboardRankThird {
+    background-color: #ae7441;
+  }
+  .leaderboardPlayerIcon {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 0 0 50px;
+    -ms-flex: 0 0 50px;
+    flex: 0 0 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-inline-start: 15px;
+  }
+  .leaderboardPlayerIcon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .leaderboardPlayerUsername {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    margin-inline-start: 15px;
+    font-family: 'Poppins';
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+  }
+  .leaderboardPlayerSep {
+    width: 100%;
+    height: 1px;
+    margin: 10px 0 10px 0;
+    background-color: #474b50;
+  }
+  .leaderboardPlayerStats {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-self: center;
+    align-self: center;
+    -ms-flex-item-align: center;
+    margin-inline-start: auto;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .leaderboardPlayerStats {
+      display: none;
+    }
+  }
+  .leaderboardPlayerStat {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 1px;
+    width: 60px;
+    height: 60px;
+    background-color: #50555a;
+    position: relative;
+    z-index: 1;
+    margin-inline-start: 30px;
+  }
+  .leaderboardPlayerStat:after {
+    position: absolute;
+    content: "  ";
+    width: 56px;
+    height: 56px;
+    top: 2px;
+    left: 2px;
+    background-color: #3e4246;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .leaderboardPlayerStat.p51 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p51 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p51 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(184deg);
+    -moz-transform: rotate(184deg);
+    -o-transform: rotate(184deg);
+    -ms-transform: rotate(184deg);
+    transform: rotate(184deg);
+  }
+  .leaderboardPlayerStat.p52 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p52 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p52 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(188deg);
+    -moz-transform: rotate(188deg);
+    -o-transform: rotate(188deg);
+    -ms-transform: rotate(188deg);
+    transform: rotate(188deg);
+  }
+  .leaderboardPlayerStat.p53 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p53 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p53 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(191deg);
+    -moz-transform: rotate(191deg);
+    -o-transform: rotate(191deg);
+    -ms-transform: rotate(191deg);
+    transform: rotate(191deg);
+  }
+  .leaderboardPlayerStat.p54 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p54 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p54 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(195deg);
+    -moz-transform: rotate(195deg);
+    -o-transform: rotate(195deg);
+    -ms-transform: rotate(195deg);
+    transform: rotate(195deg);
+  }
+  .leaderboardPlayerStat.p55 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p55 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p55 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(198deg);
+    -moz-transform: rotate(198deg);
+    -o-transform: rotate(198deg);
+    -ms-transform: rotate(198deg);
+    transform: rotate(198deg);
+  }
+  .leaderboardPlayerStat.p56 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p56 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p56 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(202deg);
+    -moz-transform: rotate(202deg);
+    -o-transform: rotate(202deg);
+    -ms-transform: rotate(202deg);
+    transform: rotate(202deg);
+  }
+  .leaderboardPlayerStat.p57 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p57 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p57 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(206deg);
+    -moz-transform: rotate(206deg);
+    -o-transform: rotate(206deg);
+    -ms-transform: rotate(206deg);
+    transform: rotate(206deg);
+  }
+  .leaderboardPlayerStat.p58 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p58 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p58 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(209deg);
+    -moz-transform: rotate(209deg);
+    -o-transform: rotate(209deg);
+    -ms-transform: rotate(209deg);
+    transform: rotate(209deg);
+  }
+  .leaderboardPlayerStat.p59 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p59 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p59 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(213deg);
+    -moz-transform: rotate(213deg);
+    -o-transform: rotate(213deg);
+    -ms-transform: rotate(213deg);
+    transform: rotate(213deg);
+  }
+  .leaderboardPlayerStat.p60 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p60 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p60 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(216deg);
+    -moz-transform: rotate(216deg);
+    -o-transform: rotate(216deg);
+    -ms-transform: rotate(216deg);
+    transform: rotate(216deg);
+  }
+  .leaderboardPlayerStat.p61 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p61 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p61 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(220deg);
+    -moz-transform: rotate(220deg);
+    -o-transform: rotate(220deg);
+    -ms-transform: rotate(220deg);
+    transform: rotate(220deg);
+  }
+  .leaderboardPlayerStat.p62 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p62 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p62 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(224deg);
+    -moz-transform: rotate(224deg);
+    -o-transform: rotate(224deg);
+    -ms-transform: rotate(224deg);
+    transform: rotate(224deg);
+  }
+  .leaderboardPlayerStat.p63 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p63 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p63 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(227deg);
+    -moz-transform: rotate(227deg);
+    -o-transform: rotate(227deg);
+    -ms-transform: rotate(227deg);
+    transform: rotate(227deg);
+  }
+  .leaderboardPlayerStat.p64 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p64 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p64 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(231deg);
+    -moz-transform: rotate(231deg);
+    -o-transform: rotate(231deg);
+    -ms-transform: rotate(231deg);
+    transform: rotate(231deg);
+  }
+  .leaderboardPlayerStat.p65 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p65 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p65 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(234deg);
+    -moz-transform: rotate(234deg);
+    -o-transform: rotate(234deg);
+    -ms-transform: rotate(234deg);
+    transform: rotate(234deg);
+  }
+  .leaderboardPlayerStat.p66 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p66 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p66 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(238deg);
+    -moz-transform: rotate(238deg);
+    -o-transform: rotate(238deg);
+    -ms-transform: rotate(238deg);
+    transform: rotate(238deg);
+  }
+  .leaderboardPlayerStat.p67 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p67 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p67 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(242deg);
+    -moz-transform: rotate(242deg);
+    -o-transform: rotate(242deg);
+    -ms-transform: rotate(242deg);
+    transform: rotate(242deg);
+  }
+  .leaderboardPlayerStat.p68 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p68 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p68 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(245deg);
+    -moz-transform: rotate(245deg);
+    -o-transform: rotate(245deg);
+    -ms-transform: rotate(245deg);
+    transform: rotate(245deg);
+  }
+  .leaderboardPlayerStat.p69 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p69 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p69 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(249deg);
+    -moz-transform: rotate(249deg);
+    -o-transform: rotate(249deg);
+    -ms-transform: rotate(249deg);
+    transform: rotate(249deg);
+  }
+  .leaderboardPlayerStat.p70 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p70 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p70 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(252deg);
+    -moz-transform: rotate(252deg);
+    -o-transform: rotate(252deg);
+    -ms-transform: rotate(252deg);
+    transform: rotate(252deg);
+  }
+  .leaderboardPlayerStat.p71 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p71 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p71 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(256deg);
+    -moz-transform: rotate(256deg);
+    -o-transform: rotate(256deg);
+    -ms-transform: rotate(256deg);
+    transform: rotate(256deg);
+  }
+  .leaderboardPlayerStat.p72 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p72 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p72 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(260deg);
+    -moz-transform: rotate(260deg);
+    -o-transform: rotate(260deg);
+    -ms-transform: rotate(260deg);
+    transform: rotate(260deg);
+  }
+  .leaderboardPlayerStat.p73 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p73 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p73 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(263deg);
+    -moz-transform: rotate(263deg);
+    -o-transform: rotate(263deg);
+    -ms-transform: rotate(263deg);
+    transform: rotate(263deg);
+  }
+  .leaderboardPlayerStat.p74 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p74 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p74 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(267deg);
+    -moz-transform: rotate(267deg);
+    -o-transform: rotate(267deg);
+    -ms-transform: rotate(267deg);
+    transform: rotate(267deg);
+  }
+  .leaderboardPlayerStat.p75 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p75 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p75 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+  .leaderboardPlayerStat.p76 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p76 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p76 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(274deg);
+    -moz-transform: rotate(274deg);
+    -o-transform: rotate(274deg);
+    -ms-transform: rotate(274deg);
+    transform: rotate(274deg);
+  }
+  .leaderboardPlayerStat.p77 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p77 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p77 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(278deg);
+    -moz-transform: rotate(278deg);
+    -o-transform: rotate(278deg);
+    -ms-transform: rotate(278deg);
+    transform: rotate(278deg);
+  }
+  .leaderboardPlayerStat.p78 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p78 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p78 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(281deg);
+    -moz-transform: rotate(281deg);
+    -o-transform: rotate(281deg);
+    -ms-transform: rotate(281deg);
+    transform: rotate(281deg);
+  }
+  .leaderboardPlayerStat.p79 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p79 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p79 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(285deg);
+    -moz-transform: rotate(285deg);
+    -o-transform: rotate(285deg);
+    -ms-transform: rotate(285deg);
+    transform: rotate(285deg);
+  }
+  .leaderboardPlayerStat.p80 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p80 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p80 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(288deg);
+    -moz-transform: rotate(288deg);
+    -o-transform: rotate(288deg);
+    -ms-transform: rotate(288deg);
+    transform: rotate(288deg);
+  }
+  .leaderboardPlayerStat.p81 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p81 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p81 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(292deg);
+    -moz-transform: rotate(292deg);
+    -o-transform: rotate(292deg);
+    -ms-transform: rotate(292deg);
+    transform: rotate(292deg);
+  }
+  .leaderboardPlayerStat.p82 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p82 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p82 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(296deg);
+    -moz-transform: rotate(296deg);
+    -o-transform: rotate(296deg);
+    -ms-transform: rotate(296deg);
+    transform: rotate(296deg);
+  }
+  .leaderboardPlayerStat.p83 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p83 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p83 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(299deg);
+    -moz-transform: rotate(299deg);
+    -o-transform: rotate(299deg);
+    -ms-transform: rotate(299deg);
+    transform: rotate(299deg);
+  }
+  .leaderboardPlayerStat.p84 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p84 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p84 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(303deg);
+    -moz-transform: rotate(303deg);
+    -o-transform: rotate(303deg);
+    -ms-transform: rotate(303deg);
+    transform: rotate(303deg);
+  }
+  .leaderboardPlayerStat.p85 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p85 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p85 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(306deg);
+    -moz-transform: rotate(306deg);
+    -o-transform: rotate(306deg);
+    -ms-transform: rotate(306deg);
+    transform: rotate(306deg);
+  }
+  .leaderboardPlayerStat.p86 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p86 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p86 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(310deg);
+    -moz-transform: rotate(310deg);
+    -o-transform: rotate(310deg);
+    -ms-transform: rotate(310deg);
+    transform: rotate(310deg);
+  }
+  .leaderboardPlayerStat.p87 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p87 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p87 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(314deg);
+    -moz-transform: rotate(314deg);
+    -o-transform: rotate(314deg);
+    -ms-transform: rotate(314deg);
+    transform: rotate(314deg);
+  }
+  .leaderboardPlayerStat.p88 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p88 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p88 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(317deg);
+    -moz-transform: rotate(317deg);
+    -o-transform: rotate(317deg);
+    -ms-transform: rotate(317deg);
+    transform: rotate(317deg);
+  }
+  .leaderboardPlayerStat.p89 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p89 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p89 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(321deg);
+    -moz-transform: rotate(321deg);
+    -o-transform: rotate(321deg);
+    -ms-transform: rotate(321deg);
+    transform: rotate(321deg);
+  }
+  .leaderboardPlayerStat.p90 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p90 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p90 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(324deg);
+    -moz-transform: rotate(324deg);
+    -o-transform: rotate(324deg);
+    -ms-transform: rotate(324deg);
+    transform: rotate(324deg);
+  }
+  .leaderboardPlayerStat.p91 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p91 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p91 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(328deg);
+    -moz-transform: rotate(328deg);
+    -o-transform: rotate(328deg);
+    -ms-transform: rotate(328deg);
+    transform: rotate(328deg);
+  }
+  .leaderboardPlayerStat.p92 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p92 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p92 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(332deg);
+    -moz-transform: rotate(332deg);
+    -o-transform: rotate(332deg);
+    -ms-transform: rotate(332deg);
+    transform: rotate(332deg);
+  }
+  .leaderboardPlayerStat.p93 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p93 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p93 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(335deg);
+    -moz-transform: rotate(335deg);
+    -o-transform: rotate(335deg);
+    -ms-transform: rotate(335deg);
+    transform: rotate(335deg);
+  }
+  .leaderboardPlayerStat.p94 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p94 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p94 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(339deg);
+    -moz-transform: rotate(339deg);
+    -o-transform: rotate(339deg);
+    -ms-transform: rotate(339deg);
+    transform: rotate(339deg);
+  }
+  .leaderboardPlayerStat.p95 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p95 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p95 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(342deg);
+    -moz-transform: rotate(342deg);
+    -o-transform: rotate(342deg);
+    -ms-transform: rotate(342deg);
+    transform: rotate(342deg);
+  }
+  .leaderboardPlayerStat.p96 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p96 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p96 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(346deg);
+    -moz-transform: rotate(346deg);
+    -o-transform: rotate(346deg);
+    -ms-transform: rotate(346deg);
+    transform: rotate(346deg);
+  }
+  .leaderboardPlayerStat.p97 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p97 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p97 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(350deg);
+    -moz-transform: rotate(350deg);
+    -o-transform: rotate(350deg);
+    -ms-transform: rotate(350deg);
+    transform: rotate(350deg);
+  }
+  .leaderboardPlayerStat.p98 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p98 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p98 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(353deg);
+    -moz-transform: rotate(353deg);
+    -o-transform: rotate(353deg);
+    -ms-transform: rotate(353deg);
+    transform: rotate(353deg);
+  }
+  .leaderboardPlayerStat.p99 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p99 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p99 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(357deg);
+    -moz-transform: rotate(357deg);
+    -o-transform: rotate(357deg);
+    -ms-transform: rotate(357deg);
+    transform: rotate(357deg);
+  }
+  .leaderboardPlayerStat.p100 .leaderboardPlayerStatBarContainer {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .leaderboardPlayerStat.p100 .leaderboardPlayerStatFill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat.p100 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  .leaderboardPlayerStat.p0 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  .leaderboardPlayerStat.p1 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    -o-transform: rotate(4deg);
+    -ms-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+  .leaderboardPlayerStat.p2 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    -o-transform: rotate(8deg);
+    -ms-transform: rotate(8deg);
+    transform: rotate(8deg);
+  }
+  .leaderboardPlayerStat.p3 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(11deg);
+    -moz-transform: rotate(11deg);
+    -o-transform: rotate(11deg);
+    -ms-transform: rotate(11deg);
+    transform: rotate(11deg);
+  }
+  .leaderboardPlayerStat.p4 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  .leaderboardPlayerStat.p5 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(18deg);
+    -moz-transform: rotate(18deg);
+    -o-transform: rotate(18deg);
+    -ms-transform: rotate(18deg);
+    transform: rotate(18deg);
+  }
+  .leaderboardPlayerStat.p6 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(22deg);
+    -moz-transform: rotate(22deg);
+    -o-transform: rotate(22deg);
+    -ms-transform: rotate(22deg);
+    transform: rotate(22deg);
+  }
+  .leaderboardPlayerStat.p7 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(26deg);
+    -moz-transform: rotate(26deg);
+    -o-transform: rotate(26deg);
+    -ms-transform: rotate(26deg);
+    transform: rotate(26deg);
+  }
+  .leaderboardPlayerStat.p8 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(29deg);
+    -moz-transform: rotate(29deg);
+    -o-transform: rotate(29deg);
+    -ms-transform: rotate(29deg);
+    transform: rotate(29deg);
+  }
+  .leaderboardPlayerStat.p9 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(33deg);
+    -moz-transform: rotate(33deg);
+    -o-transform: rotate(33deg);
+    -ms-transform: rotate(33deg);
+    transform: rotate(33deg);
+  }
+  .leaderboardPlayerStat.p10 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(36deg);
+    -moz-transform: rotate(36deg);
+    -o-transform: rotate(36deg);
+    -ms-transform: rotate(36deg);
+    transform: rotate(36deg);
+  }
+  .leaderboardPlayerStat.p11 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+  .leaderboardPlayerStat.p12 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(44deg);
+    -moz-transform: rotate(44deg);
+    -o-transform: rotate(44deg);
+    -ms-transform: rotate(44deg);
+    transform: rotate(44deg);
+  }
+  .leaderboardPlayerStat.p13 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(47deg);
+    -moz-transform: rotate(47deg);
+    -o-transform: rotate(47deg);
+    -ms-transform: rotate(47deg);
+    transform: rotate(47deg);
+  }
+  .leaderboardPlayerStat.p14 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(51deg);
+    -moz-transform: rotate(51deg);
+    -o-transform: rotate(51deg);
+    -ms-transform: rotate(51deg);
+    transform: rotate(51deg);
+  }
+  .leaderboardPlayerStat.p15 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(54deg);
+    -moz-transform: rotate(54deg);
+    -o-transform: rotate(54deg);
+    -ms-transform: rotate(54deg);
+    transform: rotate(54deg);
+  }
+  .leaderboardPlayerStat.p16 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(58deg);
+    -moz-transform: rotate(58deg);
+    -o-transform: rotate(58deg);
+    -ms-transform: rotate(58deg);
+    transform: rotate(58deg);
+  }
+  .leaderboardPlayerStat.p17 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(62deg);
+    -moz-transform: rotate(62deg);
+    -o-transform: rotate(62deg);
+    -ms-transform: rotate(62deg);
+    transform: rotate(62deg);
+  }
+  .leaderboardPlayerStat.p18 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(65deg);
+    -moz-transform: rotate(65deg);
+    -o-transform: rotate(65deg);
+    -ms-transform: rotate(65deg);
+    transform: rotate(65deg);
+  }
+  .leaderboardPlayerStat.p19 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(69deg);
+    -moz-transform: rotate(69deg);
+    -o-transform: rotate(69deg);
+    -ms-transform: rotate(69deg);
+    transform: rotate(69deg);
+  }
+  .leaderboardPlayerStat.p20 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(72deg);
+    -moz-transform: rotate(72deg);
+    -o-transform: rotate(72deg);
+    -ms-transform: rotate(72deg);
+    transform: rotate(72deg);
+  }
+  .leaderboardPlayerStat.p21 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(76deg);
+    -moz-transform: rotate(76deg);
+    -o-transform: rotate(76deg);
+    -ms-transform: rotate(76deg);
+    transform: rotate(76deg);
+  }
+  .leaderboardPlayerStat.p22 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(80deg);
+    -moz-transform: rotate(80deg);
+    -o-transform: rotate(80deg);
+    -ms-transform: rotate(80deg);
+    transform: rotate(80deg);
+  }
+  .leaderboardPlayerStat.p23 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(83deg);
+    -moz-transform: rotate(83deg);
+    -o-transform: rotate(83deg);
+    -ms-transform: rotate(83deg);
+    transform: rotate(83deg);
+  }
+  .leaderboardPlayerStat.p24 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(87deg);
+    -moz-transform: rotate(87deg);
+    -o-transform: rotate(87deg);
+    -ms-transform: rotate(87deg);
+    transform: rotate(87deg);
+  }
+  .leaderboardPlayerStat.p25 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .leaderboardPlayerStat.p26 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(94deg);
+    -moz-transform: rotate(94deg);
+    -o-transform: rotate(94deg);
+    -ms-transform: rotate(94deg);
+    transform: rotate(94deg);
+  }
+  .leaderboardPlayerStat.p27 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(98deg);
+    -moz-transform: rotate(98deg);
+    -o-transform: rotate(98deg);
+    -ms-transform: rotate(98deg);
+    transform: rotate(98deg);
+  }
+  .leaderboardPlayerStat.p28 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(101deg);
+    -moz-transform: rotate(101deg);
+    -o-transform: rotate(101deg);
+    -ms-transform: rotate(101deg);
+    transform: rotate(101deg);
+  }
+  .leaderboardPlayerStat.p29 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(105deg);
+    -moz-transform: rotate(105deg);
+    -o-transform: rotate(105deg);
+    -ms-transform: rotate(105deg);
+    transform: rotate(105deg);
+  }
+  .leaderboardPlayerStat.p30 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(108deg);
+    -moz-transform: rotate(108deg);
+    -o-transform: rotate(108deg);
+    -ms-transform: rotate(108deg);
+    transform: rotate(108deg);
+  }
+  .leaderboardPlayerStat.p31 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(112deg);
+    -moz-transform: rotate(112deg);
+    -o-transform: rotate(112deg);
+    -ms-transform: rotate(112deg);
+    transform: rotate(112deg);
+  }
+  .leaderboardPlayerStat.p32 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(116deg);
+    -moz-transform: rotate(116deg);
+    -o-transform: rotate(116deg);
+    -ms-transform: rotate(116deg);
+    transform: rotate(116deg);
+  }
+  .leaderboardPlayerStat.p33 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(119deg);
+    -moz-transform: rotate(119deg);
+    -o-transform: rotate(119deg);
+    -ms-transform: rotate(119deg);
+    transform: rotate(119deg);
+  }
+  .leaderboardPlayerStat.p34 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(123deg);
+    -moz-transform: rotate(123deg);
+    -o-transform: rotate(123deg);
+    -ms-transform: rotate(123deg);
+    transform: rotate(123deg);
+  }
+  .leaderboardPlayerStat.p35 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(126deg);
+    -moz-transform: rotate(126deg);
+    -o-transform: rotate(126deg);
+    -ms-transform: rotate(126deg);
+    transform: rotate(126deg);
+  }
+  .leaderboardPlayerStat.p36 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+  .leaderboardPlayerStat.p37 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(134deg);
+    -moz-transform: rotate(134deg);
+    -o-transform: rotate(134deg);
+    -ms-transform: rotate(134deg);
+    transform: rotate(134deg);
+  }
+  .leaderboardPlayerStat.p38 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(137deg);
+    -moz-transform: rotate(137deg);
+    -o-transform: rotate(137deg);
+    -ms-transform: rotate(137deg);
+    transform: rotate(137deg);
+  }
+  .leaderboardPlayerStat.p39 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(141deg);
+    -moz-transform: rotate(141deg);
+    -o-transform: rotate(141deg);
+    -ms-transform: rotate(141deg);
+    transform: rotate(141deg);
+  }
+  .leaderboardPlayerStat.p40 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(144deg);
+    -moz-transform: rotate(144deg);
+    -o-transform: rotate(144deg);
+    -ms-transform: rotate(144deg);
+    transform: rotate(144deg);
+  }
+  .leaderboardPlayerStat.p41 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(148deg);
+    -moz-transform: rotate(148deg);
+    -o-transform: rotate(148deg);
+    -ms-transform: rotate(148deg);
+    transform: rotate(148deg);
+  }
+  .leaderboardPlayerStat.p42 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(152deg);
+    -moz-transform: rotate(152deg);
+    -o-transform: rotate(152deg);
+    -ms-transform: rotate(152deg);
+    transform: rotate(152deg);
+  }
+  .leaderboardPlayerStat.p43 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(155deg);
+    -moz-transform: rotate(155deg);
+    -o-transform: rotate(155deg);
+    -ms-transform: rotate(155deg);
+    transform: rotate(155deg);
+  }
+  .leaderboardPlayerStat.p44 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(159deg);
+    -moz-transform: rotate(159deg);
+    -o-transform: rotate(159deg);
+    -ms-transform: rotate(159deg);
+    transform: rotate(159deg);
+  }
+  .leaderboardPlayerStat.p45 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(162deg);
+    -moz-transform: rotate(162deg);
+    -o-transform: rotate(162deg);
+    -ms-transform: rotate(162deg);
+    transform: rotate(162deg);
+  }
+  .leaderboardPlayerStat.p46 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(166deg);
+    -moz-transform: rotate(166deg);
+    -o-transform: rotate(166deg);
+    -ms-transform: rotate(166deg);
+    transform: rotate(166deg);
+  }
+  .leaderboardPlayerStat.p47 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(170deg);
+    -moz-transform: rotate(170deg);
+    -o-transform: rotate(170deg);
+    -ms-transform: rotate(170deg);
+    transform: rotate(170deg);
+  }
+  .leaderboardPlayerStat.p48 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(173deg);
+    -moz-transform: rotate(173deg);
+    -o-transform: rotate(173deg);
+    -ms-transform: rotate(173deg);
+    transform: rotate(173deg);
+  }
+  .leaderboardPlayerStat.p49 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(177deg);
+    -moz-transform: rotate(177deg);
+    -o-transform: rotate(177deg);
+    -ms-transform: rotate(177deg);
+    transform: rotate(177deg);
+  }
+  .leaderboardPlayerStat.p50 .leaderboardPlayerStatBar {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .leaderboardPlayerStat .leaderboardPlayerStatText {
+    z-index: 3;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-top: -1px;
+  }
+  .leaderboardPlayerStat .leaderboardPlayerStatText .leaderboardPlayerStatName {
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Poppins';
+    line-height: 1;
+    margin-bottom: 1px;
+    color: #85878a;
+  }
+  .leaderboardPlayerStat .leaderboardPlayerStatText .leaderboardPlayerStatValue {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    line-height: 1;
+    margin-top: 5px;
+    color: #fff;
+  }
+  .leaderboardPlayerStat .leaderboardPlayerStatBarContainer {
+    z-index: 3;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    clip: rect(0, 60px, 60px, 30px);
+  }
+  .leaderboardPlayerStat .leaderboardPlayerStatBarContainer .leaderboardPlayerStatBar {
+    z-index: 3;
+    position: absolute;
+    border: 2px solid #62d3f5;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    clip: rect(0, 30px, 60px, 0);
+  }
+  .leaderboardPlayerStat .leaderboardPlayerStatBarContainer .leaderboardPlayerStatFill {
+    z-index: 4;
+    position: absolute;
+    border: 2px solid #62d3f5;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    clip: rect(0, 30px, 60px, 0);
+  }
+  .leaderboardSidebarContainer {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 0 0 350px;
+    -ms-flex: 0 0 350px;
+    flex: 0 0 350px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .leaderboardSidebarContainer {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -o-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+      flex: 1 0 100%;
+    }
+  }
+  .leaderboardSidebarBlock {
+    width: 320px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #3e4246;
+    border-radius: 3px;
+    padding: 16px 20px;
+    margin-inline-start: 30px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    max-height: 3000px;
+    overflow: hidden;
+    -webkit-transition: max-height 175ms ease-out;
+    -moz-transition: max-height 175ms ease-out;
+    -o-transition: max-height 175ms ease-out;
+    -ms-transition: max-height 175ms ease-out;
+    transition: max-height 175ms ease-out;
+  }
+  @media (max-width: 640px) {
+    .leaderboardSidebarBlock {
+      margin-inline-start: 0;
+      width: 90%;
+      max-height: 54px;
+    }
+  }
+  .leaderboardSidebarBlock h1 {
+    font-size: 16px;
+    font-family: 'Poppins';
+    color: #fff;
+    padding-top: 0;
+    padding-bottom: 15px;
+    text-transform: none !important;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .leaderboardSidebarBlock h5 {
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #9f9fa0;
+    font-family: 'Poppins';
+  }
+  .leaderboardSidebarBlock .leaderboardSidebarBlockSeparator {
+    width: 100%;
+    height: 1px;
+    background-color: #474b50;
+    margin-bottom: 15px;
+  }
+  .leaderboardSidebarBlock.open {
+    max-height: 54px;
+  }
+  @media (max-width: 640px) {
+    .leaderboardSidebarBlock.open {
+      max-height: 3000px;
+    }
+  }
+  .leaderboardRole {
+    border: 1px solid;
+    border-radius: 14px;
+    padding: 0 13px;
+    width: max-content;
+    height: 28px;
+    font-size: 12px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    line-height: 28px;
+    -webkit-box-align: centers;
+    -moz-box-align: centers;
+    -o-box-align: centers;
+    -ms-flex-align: centers;
+    -webkit-align-items: centers;
+    align-items: centers;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    margin-inline-end: 5px;
+    overflow: hidden;
+    max-width: 270px;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -o-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+  }
+  .playerProfile {
+    width: 320px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #42caf3;
+    border-radius: 3px;
+    padding: 16px 20px;
+    margin-inline-start: 30px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 0 10px rgba(98,211,245,0.2);
+    box-shadow: 0 0 10px rgba(98,211,245,0.2);
+  }
+  @media (max-width: 640px) {
+    .playerProfile {
+      margin-inline-start: 0;
+      width: 90%;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+  .playerProfile .leaderboardPlayerIcon {
+    margin-inline-start: 0;
+  }
+  .playerProfile .leaderboardPlayerIcon img {
+    border: 2px solid #fff;
+  }
+  .playerProfile .leaderboardPlayerStatName {
+    color: #fff !important;
+  }
+  .playerProfile .leaderboardPlayerStat {
+    background-color: transparent;
+  }
+  .playerProfile .leaderboardPlayerStat:after {
+    background-color: #95e4fe;
+  }
+  .playerProfile .leaderboardPlayerStat .leaderboardPlayerStatBar {
+    border-color: #fff;
+  }
+  .playerProfile .leaderboardPlayerStat .leaderboardPlayerStatFill {
+    border-color: #fff;
+  }
+  .playerProfile .leaderboardPlayerStatBlock {
+    margin-inline-start: 5px !important;
+  }
+  .playerProfile .leaderboardPlayerUsername {
+    overflow: hidden;
+    line-height: 1;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+  }
+  .playerProfile .playerGuildSettings {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    margin-top: 10px;
+    padding-top: 15px;
+  }
+  .playerProfile .playerGuildSettingsUseDefaultRankCard {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+  }
+  .playerProfile .playerGuildSettingsUseDefaultRankCard .Toggle {
+    margin-inline-start: auto;
+  }
+  .playerProfile .Toggle {
+    background-color: #89e4ff !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .playerProfile .Toggle.checked {
+    background-color: #158db1 !important;
+  }
+  .playerProfile .ToggleCircle {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .playerProfile button {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -o-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    padding-inline-start: 13px;
+    margin-top: 15px;
+  }
+  .playerProfile button span {
+    margin-inline-start: 7px;
+  }
+  .leaderboardLoginCta {
+    width: 320px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    background-color: #42caf3;
+    border-radius: 3px;
+    padding: 16px 20px;
+    margin-inline-start: 30px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 0 10px rgba(98,211,245,0.2);
+    box-shadow: 0 0 10px rgba(98,211,245,0.2);
+    cursor: pointer;
+    -webkit-transition: background-color 175ms ease-out;
+    -moz-transition: background-color 175ms ease-out;
+    -o-transition: background-color 175ms ease-out;
+    -ms-transition: background-color 175ms ease-out;
+    transition: background-color 175ms ease-out;
+    font-family: "Poppins";
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .leaderboardLoginCta {
+      margin-inline-start: 0;
+      width: 90%;
+    }
+  }
+  .leaderboardLoginCta .leaderboardLoginCtaText {
+    margin-inline-start: 13px;
+  }
+  .leaderboardLoginCta svg {
+    fill: #fff;
+  }
+  .leaderboardPlaceholderText {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 20px;
+  }
+  body .overlayOpacitySliderHandle {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background-color: #62d3f5;
+    top: -8px;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 6px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 0 6px 1px rgba(0,0,0,0.3);
+  }
+  body .RankCardOverlayOpacitySliderContainer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: auto;
+  }
+  body .RankCardBackgroundContainer {
+    min-height: 100px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  body .RankCardBackgroundContainer canvas {
+    cursor: move;
+  }
+  body .RankCardBackgroundContainer .RankCardBackgroundUpload {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  body .RankCardBackgroundContainer button {
+    padding: 0em 1em 0em 1em !important;
+    min-width: 122px;
+    height: 32px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  @media (max-width: 640px) {
+    body .RankCardBackgroundContainer button {
+      width: 100px;
+      height: 26px;
+    }
+  }
+  body .RankCardBackgroundContainer .pay-btn {
+    width: unset;
+    padding: 5px 15px !important;
+  }
+  body .RankCardBackgroundContainer.locked button {
+    cursor: not-allowed;
+  }
+  body .RankCardBackgroundContainer .RankCardBackgroundOutter {
+    width: 122px;
+    height: 32px;
+    margin-inline-end: 15px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  @media (max-width: 640px) {
+    body .RankCardBackgroundContainer .RankCardBackgroundOutter {
+      width: 100px;
+      height: 26px;
+    }
+  }
+  body .RankCardBackgroundContainer .RankCardBackgroundOutter .RankCardBackgroundCross {
+    visibility: hidden;
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #f04848;
+    border-radius: 100%;
+    top: -10px;
+    right: -10px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  body .RankCardBackgroundContainer .RankCardBackgroundOutter:hover .RankCardBackgroundCross {
+    visibility: visible;
+  }
+  body .RankCardBackgroundContainer.locked .RankCardBackgroundOutter {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+  body .RankCardBackgroundContainer.locked button {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+  body .RankCardBackgroundContainer .RankCardBackground {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    background-color: #272a2d;
+    width: 122px;
+    height: 32px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+  }
+  @media (max-width: 640px) {
+    body .RankCardBackgroundContainer .RankCardBackground {
+      width: 100px;
+      height: 26px;
+    }
+  }
+  body .RankCardBackgroundContainer .RankCardBackground .selectedCover {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+  }
+  body .RankCardBackgroundContainer.locked .RankCardBackground {
+    cursor: not-allowed;
+  }
+  body .RankCardBackgroundEditorControl {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 15px;
+  }
+  body .RankCardBackgroundEditorControl .RankCardBackgroundEditorControlButtons {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-left: auto;
+  }
+  body .RankCardBackgroundEditorControl .RankCardBackgroundEditorControlButtons button {
+    margin-inline-start: 10px;
+  }
+  body .overlayOpacitySlider {
+    width: 100px;
+    height: 1px;
+    background-color: rgba(255,255,255,0.1);
+  }
+  body .rankCardBackgroundTitle {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  body .rankCardBackgroundTitle .lock {
+    width: 9px;
+    margin-inline-start: 5px;
+    margin-inline-end: 10px;
+  }
+  body .rankCardBackgroundTitle .rankCardBackgroundPrice {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    color: #fce59a;
+  }
+  body .rankCardBackgroundTitle .rankCardBackgroundPrice img {
+    width: 10px;
+    margin-inline-end: 3px;
+  }
+  body .RankCardBackgroundUnlockContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -o-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    z-index: 100;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  body .RankCardBackgroundUnlockContainer .RankCardBackgroundUnlock {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 300%;
+    -webkit-transition: -webkit-transform 200ms ease-out;
+    -moz-transition: -moz-transform 200ms ease-out;
+    -o-transition: -o-transform 200ms ease-out;
+    -ms-transition: -ms-transform 200ms ease-out;
+    transition: transform 200ms ease-out;
+  }
+  body .RankCardBackgroundUnlockContainer .RankCardBackgroundUnlock .RankCardBackgroundUnlockUnlockContainer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 100%;
+  }
+  body .RankCardBackgroundUnlockContainer .RankCardBackgroundUnlock .RankCardBackgroundUnlockUnlock {
+    pointer-events: auto;
+  }
+  body .RankCardBackgroundUnlockContainer .RankCardBackgroundUnlock .RankCardBackgroundUnlockUnlock button {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    cursor: pointer;
+    min-width: 140px;
+    min-height: 38px;
+  }
+  body .RankCardBackgroundUnlockContainer .RankCardBackgroundUnlock .RankCardBackgroundCheckout {
+    pointer-events: auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+  }
+  body .RankCardBackgroundUnlockContainer .RankCardBackgroundUnlock .RankCardBackgroundCheckout button {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    cursor: pointer;
+    min-width: 140px;
+    min-height: 38px;
+  }
+  body .RankCardBackgroundUnlockContainer .RankCardBackgroundUnlock .RankCardBackgroundUnlockDescription {
+    color: #fff;
+    font-weight: 600;
+    margin-top: 8px;
+    text-align: center;
+  }
+  body .RankCardBackgroundUnlockContainer .RankCardBackgroundUnlock .RankCardBackgroundCheckout button {
+    margin: 0 6px;
+  }
+  body .RankCardBackgroundUnlockContainer .RankCardBackgroundUnlock .RankCardBackgroundCheckout button img {
+    margin-inline-end: 5px;
+  }
+  @media (max-width: 640px) {
+    body .rankCardModalSVGContainer {
+      zoom: 0.75;
+    }
+  }
+  @media (max-width: 640px) {
+    body .ColorSelectorColorsContainer {
+      display: None;
+    }
+  }
+ /* */
