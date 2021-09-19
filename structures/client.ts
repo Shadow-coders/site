@@ -4,6 +4,7 @@ class SiteBot extends Client {
     /* this[] definitions*/
 commands: Map<null, null>
 prefix: Array<String>
+constructedAt: any
 /* constructor */
 public constructor() {
  super({ 
@@ -26,7 +27,7 @@ public constructor() {
            repliedUser: true 
         } 
         })
-
+this.constructedAt = Date.now()
         this.commands = new Map()
         this.prefix = config.prefix
         this.on('ready', this.load)
@@ -62,6 +63,8 @@ setTimeout(async () => {
 load() {
     if(!this.isReady()) return;
     console.log('Ready on ' + this.user.tag)
+    
+  console.debug('Took ' + (Date.now() - this.constructedAt) + ' time to load')
     this.on('messageCreate', (message:Message) => {
         if(message.author.bot) return
         if(!this.prefix.some((prefix:any) => message.content.startsWith(prefix))) return

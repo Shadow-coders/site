@@ -2,20 +2,31 @@ import Client from './structures/client'
 import Discord from 'discord.js'
 import express from 'express'
 import * as fs from 'fs'
+import mongoose from 'mongoose'
 import ejs from 'ejs'
 import config from './config'
 import ModuleHandler from './handlers/modules'
 import RouteHandler from './handlers/routes'
 import passport from 'passport'
 import PassportHandler from './handlers/passport'
+import DB from './util/db'
 //import logger from './logger'
 const { debug, error, log, warn } = console
 //const   = express
+const date:any = Date.now()
 const app = express()
+let db:any ;
+mongoose.connect(config.mongouri).then((c) => {
+  log('connected to mongose db')
+  debug('Took ' + (Date.now() - date) + 'ms time to load')
+  db = new DB(c) 
+})
 const shadow = new Discord.Client({ intents: ['GUILDS', 'GUILD_MEMBERS', 'DIRECT_MESSAGES', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES', 'GUILD_INVITES']})
 shadow.login(config.shadow_token)
 shadow.on('ready', () => {
-  debug('Shadow bot connected for [GUILDS]')
+  log('Shadow bot connected for [GUILDS]')
+  
+  debug('Took ' + (Date.now() - date) + 'ms time to load')
   shadow.guilds.cache.forEach((g:any) => g.members.fetch())
 })
 const client:any = new Client()
