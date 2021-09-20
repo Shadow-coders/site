@@ -5,6 +5,7 @@ export default (app: any) => {
 app.use(Express.static('public'))
 app.use(requestHandler)
 app.engine('html', require('ejs-locals'));
+app.use(Express.json())
 app.use(session({
     secret: `fojwbowubfouwbfouwbfowuebfowuebfwouefbowfubweoufbweoufbwoefbuwoefub`,
     resave: false,

@@ -1,6 +1,5 @@
-import Model from '../models/main'
 import { EventEmitter } from 'events'
-import { Model as ModelInterface } from 'mongoose';
+import config from '../config';
 class Mongo extends EventEmitter {
     Model: any
     connection: any
@@ -9,10 +8,9 @@ class Mongo extends EventEmitter {
     debug: Function
     readyAt: any
     uptime: any
-public constructor(connection:any) {
+public constructor(Model:any) {
 super()
 this.Model = Model;
-this.connection = connection || { n: null }
 this.ping = 0
 this.logger = console;
 this.debug = function(name:any, data:any) {
@@ -36,21 +34,22 @@ if(this.ping > 1000 && this.logger)  this.logger.warn("[DB/PING] the database pi
 }, 3e5)
 this.emit("ready", this)
 }
-public set(key:String, value:any) {
+public set(key:any, value:any): Promise<Object> {
+
 return new Promise(async (res,rej) => {
-if(!await Model.exists({ key: key, })) {
-const data = new Model({ key: key, data: value })
+if(!await this.Model.exists({ key: key, })) {
+const data = new this.Model({ key: key, data: value })
 data.save()
-res({ key, value })
+return res({ key, value })
 }
-const data = await Model.findOneAndUpdate({ key: key }, { data: value })
+const data = await this.Model.findOneAndUpdate({ key: key }, { data: value })
 res({ key, value })
 })
 
 }
 async get(key:String):Promise<null | any> {
 
-const data:any = await Model.findOne({ key: key })
+const data:any = await this.Model.findOne({ key: key })
 //console.log(data)
 if(!data) return null;
  //console.log(data["data"])
@@ -60,19 +59,30 @@ return data.data
 }
 public all(): Promise<Object[]> {
 return new Promise(async (res,rej) => {
-let data = await Model.find()
+let data = await this.Model.find()
 res(data)
 }) 
 }
 public delete(key:String): Promise<Boolean> {
 return new Promise(async (res, rej) => {
-const k = await Model.findOne({ key: key })
+const k = await this.Model.findOne({ key: key })
 if(!k) return rej(false);
-k.remove().catch(e => rej(e))
+k.remove().catch((e:any) => rej(e))
 return res(true);
 })
 }
-
+/**
+ * makeRoutes
+ */
+public makeRoutes(app:any, db:any, client:any): Promise<any> {
+    const auth = (req:any,res:any,next:any) => {
+        if(!(req.headers['user-agent'] === 'Site@0.0.1')) return res.status(401);
+        next()
+    }
+return new Promise<any>(async (res:any, rej:any) => {
+res()
+})
+}
 
 }
 export default Mongo
