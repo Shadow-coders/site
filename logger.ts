@@ -40,12 +40,14 @@ setInterval(() => {
    // console.log(this.logs)
     let debugdesc = ( this.logs.debug.join('\n') )
     let logsdesc = ( this.logs.logs.join('\n') )
+    let warndesc = this.logs.warn.join('\n')
     // if(!(typeof logsdesc === 'string')) logsdesc = 'None!'
     // if(!(typeof debugdesc === 'string')) debugdesc = 'None!'
     const embeds:Array<MessageEmbed | undefined | Object> = [
         
          logsdesc ? new MessageEmbed().setColor('#00ff00').setTitle('[LOGS]').setDescription('```\n' + logsdesc +'```').setAuthor('site') : { none: true },
-         debugdesc ? new MessageEmbed().setColor('WHITE').setDescription('```\n' + debugdesc+ '```').setTitle('[DEBUG]').setAuthor('site')  : { none: true }
+         debugdesc ? new MessageEmbed().setColor('WHITE').setDescription('```\n' + debugdesc+ '```').setTitle('[DEBUG]').setAuthor('site')  : { none: true },
+         warndesc ? new MessageEmbed().setColor('YELLOW').setDescription('```\n' + warndesc + '```').setTitle('[WARNS]').setAuthor('site')  : { none: true }
             ]
     fetch(`${config.logger.LogsUrl}`,
          {
@@ -81,8 +83,17 @@ if(!this.logs.logs.push) return console.log('no this.logs.debug.push');
     if(!this.logs.debug.push) return console.log('no this.logs.debug.push');
     this.logs.debug.push(message)
 }
+warn = (message:any) => {
+    console.warn(message)
+    
+    if(!this) return console.log('no this');
+    if(!this.logs) return console.log('no this.logs');
+    if(!this.logs.debug) return console.log('no this.ogs.debug');
+    if(!this.logs.debug.push) return console.log('no this.logs.debug.push');
+    this.logs.warn.push(message)
+}
 async ready(client:any) {
-if(!client) return fetch(`${config.logger.StatusUrl}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ embeds: [{ title: 'Ready', description: `Site is loaded`, color: 0x00ff00 }] }) })
+if(!(client instanceof Client)) return fetch(`${config.logger.StatusUrl}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ embeds: [{ title: 'Ready', description: `Site is loaded and is ready on ${client}`, color: 0x00ff00 }] }) })
 if(!client.isReady()) await this.readyWhen(client)
 return fetch(`${config.logger.StatusUrl}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ embeds: [{ title: 'Ready', description: `${client.user.username} is ready on the site!`, author: { name: client.user.tag, iconURL: client.user.displayAvatarURL() }, color: 0x00ff00 }] }) })
 }

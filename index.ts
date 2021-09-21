@@ -73,7 +73,8 @@ app.on('mount', () => {
 })
 app.listen(config.port, () => {
     debug('Listening on ' + config.port + `\n ${config.prottocal}${config.domain}${config.usesport ?  ':' +  config.port + '/': '/'} `)
-})
+Logger.ready(`[${config.domain}](${config.makeURL()})`)
+  })
 ModuleHandler(app)
 PassportHandler(app)
 const Add = async (path:any, prams: any) => {

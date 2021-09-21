@@ -34,6 +34,9 @@ form.d-flex button:hover {
     color: white;
     line-height: 1.3;
     text-align: center;
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
 }
 
 .subtext {
@@ -181,6 +184,13 @@ form.d-flex button:hover {
        </style>
         <title> Shadow </title>    
     </head>
+ <div class="sidenav">
+        <br> <br>
+        <a href="<%=config.makeURL()%>dashboard/<%=guild.id%>/about" style="color:white;">About</a>
+        <a href="#services">Services</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+</div>
     <body>
         <!--HEADER-->
         <%- header -%>
@@ -193,21 +203,19 @@ alert('Saved! ' + " the data <%=data%>");
 re()
 </script>
 <% } %>
-<div class="sidenav">
-    <a href="#about" style="color:white;">About</a>
-    <a href="#services">Services</a>
-    <a href="#clients">Clients</a>
-    <a href="#contact">Contact</a>
-  </div>
-       <!--MAIN BODY-->
+    <!--MAIN BODY-->
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
         <div class="d-flex justify-content-center head">
-           <img src="https://cdn.discordapp.com/avatars/765578525818093608/010324076be471be8da246f395e77650.webp?size=1024" alt="shadow" width="80" height="80" style="border-radius: 50px;"> 
+           <img src="<%=client.user.displayAvatarURL({ dynamic:true }) %>" alt="shadow" width="80" height="80" style="border-radius: 50px;"> 
+        <br>
               <h1> ‏‏‎ ‎‏‏‎‎<b>Shadow</b></h1>
         </div>
         <div class="d-flex justify-content-center subtext">
+            <br>
     <input type="text" id="prefix-text" name="text" required>
+    <br>
      <button type="submit" id='prefix-button'>submit</button>
-     <footer> changes the bots prefix! </form>
+     <br><br><footer> changes the bots prefix! </footer>
 <script>
     const prefix = document.getElementById('prefix-button')
     prefix.addEventListener('click', () => {
@@ -225,44 +233,10 @@ fetch(`<%=config.makeURL()%>db/set`, {
 })
 info.value = ''
     })
+    console.log('Loaded script!')
 </script>
-    </div>
 
-        <div class="container custom-1">
-            <h3 class=""><b>Starboard</b></h3>
-            <p>
-                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-            </p>
-        </div>
-
-        <div class="container pt-10 custom-2">
-            <img src="https://cdn.discordapp.com/attachments/765669027552559149/825745571750871070/unknown.png">
-            <h3><b>good logging and moderations</b></h3>
-            <p>
-                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-            </p>
-        </div>
-
-        <div class="container custom-1 pt-16">
-            <img class="custom-image" src="https://cdn.discordapp.com/attachments/809805781229633609/810069555711967282/unknown.png">
-            <h3 class="align-self-start"><b>Easy To Moderate</b></h3>
-            <p>
-                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-            </p>
-        </div>
-
-        <div class="container pt-10 custom-2">
-            <img src="https://cdn.discordapp.com/attachments/809805781229633609/810071566766964736/unknown.png">
-            <h3><b>Very Good Help Command</b></h3>
-            <p>
-                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-            </p>
-        </div> 
-
-
-      <!--<\% for(var i = 0; i < guilds.length; i++) { %>
-        <li><\%= guilds[i] %></li>
-      <\% } %> -->         
+    </div>         
 <!-- end of BODY -->
        <!--JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
