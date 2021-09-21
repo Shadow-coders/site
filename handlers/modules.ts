@@ -3,7 +3,6 @@ import session from 'express-session'
 import requestHandler from '../util/reqhandler'
 export default (app: any) => {
 app.use(Express.static('public'))
-app.use(requestHandler)
 app.engine('html', require('ejs-locals'));
 app.use(Express.json())
 app.use(session({
@@ -16,5 +15,6 @@ app.use(session({
         maxAge: 48 * 60 * 60 * 1000,
     },
 }))
+app.use(requestHandler)
 app.set('trust proxy', 1)
 }

@@ -2,6 +2,7 @@ import Client from './structures/client'
 import Discord from 'discord.js'
 import express from 'express'
 import * as fs from 'fs'
+import ApiApp from './api/index'
 import mongoose from 'mongoose'
 import ejs from 'ejs'
 import config from './config'
@@ -28,6 +29,9 @@ mongoose.connect(config.mongouri).then((c) => {
   db.logger = Logger
   bot_db = new DB(BotModel)
   bot_db.logger = Logger
+  
+db.on('debug', debug)
+bot_db.on('debug', debug)
 db.makeRoutes(app,db,client).then(() => console.log('e'))
 })
 const auth = (req:any,res:any,next:any) => {
@@ -36,7 +40,7 @@ const auth = (req:any,res:any,next:any) => {
   next()
 }
 app.use(express.urlencoded({ extended: true }));
-  
+app.use('/api', ApiApp)
 app.get('/db/get', auth, (req:any,res:any) => {
   bot_db.get(req.query.key).then((d:any) => {
       res.json({ data: d })

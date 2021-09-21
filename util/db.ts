@@ -22,16 +22,18 @@ this.on("events.ping", ping => {
 this.debug("HeartbeatTimer", "Heartbeat acknowledged, latency of " + ping + "ms.")
 })
 setInterval(() => this.uptime = Date.now() - this.readyAt, 1)
-setInterval(async () => {
-this.debug("HeartbeatTimer", "sending a ping")
-let date = Date.now()
-if(!this.set) return;
-await this.set("ping", this.ping ? this.ping : 0)
-await this.delete('ping')
-this.ping = Date.now() - date
-this.emit("events.ping", this.ping)
-if(this.ping > 1000 && this.logger)  this.logger.warn("[DB/PING] the database ping is over 1000!!\n expect low response time ")
-}, 3e5)
+const ping = async () => {
+    this.debug("HeartbeatTimer", "sending a ping")
+    let date = Date.now()
+    if(!this.set) return;
+    await this.set("ping", this.ping ? this.ping : 0)
+    await this.delete('ping')
+    this.ping = Date.now() - date
+    this.emit("events.ping", this.ping)
+    if(this.ping > 1000 && this.logger)  this.logger.warn("[DB/PING] the database ping is over 1000!!\n expect low response time ")
+    }
+    ping()
+setInterval(ping, 3e5)
 this.emit("ready", this)
 }
 public set(key:any, value:any): Promise<Object> {
