@@ -1,6 +1,7 @@
 import { Client, Message, MessageEmbed, WebhookClient } from "discord.js";
 import config from "./config";
 import fetch from 'node-fetch'
+import { inspect } from 'util'
 interface LogInterface {
     logs: any
     errors: any
@@ -71,7 +72,17 @@ if(!this.logs.logs) return console.log('no this.logs.debug');
 if(!this.logs.logs.push) return console.log('no this.logs.debug.push');
  this.logs.logs.push(message)
 }
+error = (message:any) => {
+    if(!(typeof message === 'string')) message = inspect(message)
+    console.log(message)
 
+    //   console.log(this)
+     //  if(!this) return console.log('no this');
+    if(!this.logs) return console.log('no this.logs');
+   if(!this.logs.logs) return console.log('no this.logs.debug');
+   if(!this.logs.logs.push) return console.log('no this.logs.debug.push');
+    this.logs.errors.push(message)
+}
 /**
  * debug
  */

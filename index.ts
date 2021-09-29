@@ -1,6 +1,7 @@
 import Client from './structures/client'
-import Discord from 'discord.js'
+import Discord, { ShardClientUtil } from 'discord.js'
 import express from 'express'
+import child from 'child_process'
 import * as fs from 'fs'
 import ApiApp from './api/index'
 import mongoose from 'mongoose'
@@ -16,7 +17,7 @@ import DB from './util/db'
 import logger from './logger'
 //const   = express
 const Logger = new logger(null);
-const { debug,  log } = Logger
+const { debug,  log, error } = Logger
 const date:any = Date.now()
 const app = express()
 app.use(express.json())
@@ -114,6 +115,21 @@ app.use('*', (req: any,res: any) => {
 //log('read index.js')const TikTokScraper = require('tiktok-scraper');
 process.on('unhandledRejection', (err:Error)  => {
 console.error(err)
+})
+app.post('/github', (req:any,res:any) => {
+const Shut = () => {
+  log(req.body)
+  log(req.headers)
+res.status(401).json({ status: 401, message: 'No auth'})
+}
+  if(!req.body) return Shut()
+  if(!req.body.secret) return Shut();
+  if(!req.body.secret === config.client_secret) return Shut();
+  error(req.body); error(req.headers)
+  debug('[GITHUB/BOT] recived info! pulling from point on mergee')
+child.execFileSync('/root/bot/github.sh')
+log('Done with pull! sending 200!')
+res.sendStatus(200);
 })
 process.on('SIGINT', () => {
   Logger.shutdown(client)
