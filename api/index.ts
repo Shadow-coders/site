@@ -14,18 +14,21 @@ client.login(config.bot.token)
 const app = express()
 export default app;
 app.on('mount', () => {
-    console.log('Mounted!')
+    console.log('Mounted API!')
 })
 
 app.use(session({
     name: 'app.sid',
     secret: /$Neon^fg28gfb#*@gB*@#gb*@3g@*3gB@*uVB2893ON@#98&@#GB/.toString().slice(1, 15)
   }));
-  app.use(auth)
+  app.use( '/v1/', auth )
+  app.set('json spaces', 2)
   app.use(Limiter({ client }))
 
   app.get('/', (req:any,res:any) => {
-    res.json({ name: 'api' })
+    res.json({
+     endpoints: [] 
+    })
 })
 app.get('/authinfo', (req:any,res:any) => {
     res.json(res.auth)
