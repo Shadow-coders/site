@@ -16,14 +16,14 @@ import PassportHandler from './handlers/passport'
 import DB from './util/db'
 import logger from './logger'
 import { createServer } from 'http'
-import { Server } from 'socket.io'
+import ioc from 'socket.io'
 //const   = express
 const Logger = new logger(null);
 const { debug,  log, error } = Logger
 const date:any = Date.now()
 const app = express()
 const server = createServer(app)
-const io = Server(server)
+const io = (ioc as any)(server)
 io.on('connection', (socket:any) => {
   log('Connection')
   socket.on('ping', console.log)

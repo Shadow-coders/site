@@ -12,7 +12,6 @@
   "license": "MIT",
   "dependencies": {
     "@types/passport": "^1.0.7",
-    "@types/socket.io": "^3.0.2",
     "discord.js": "^13.1.0",
     "ejs": "^3.1.6",
     "ejs-locals": "^1.0.2",
