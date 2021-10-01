@@ -26,7 +26,7 @@ const server = createServer(app)
 const io = (ioc as any)(server)
 io.on('connection', (socket:any) => {
   log('Connection')
-  socket.on('ping', console.log)
+  socket.on('ping', log)
 })
 app.use(express.json())
 let db:any ;
