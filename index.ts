@@ -31,7 +31,7 @@ io.on('connection', (socket:any) => {
 app.use(express.json())
 let db:any ;
 let bot_db : any ;
-mongoose.connect(config.mongouri).then((c) => {
+mongoose.connect(config.mongouri).then((c:any) => {
   log('connected to mongose db')
   debug('Took ' + (Date.now() - date) + 'ms time to load - DB')
   db = new DB(SiteModel) 
