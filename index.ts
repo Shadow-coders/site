@@ -24,8 +24,11 @@ const date:any = Date.now()
 const app = express()
 const server = createServer(app)
 const io = (ioc as any)(server)
+debug(io)
 io.on('connection', (socket:any) => {
   log('Connection')
+  debug(socket)
+ 
   socket.on('ping', log)
 })
 app.use(express.json())
