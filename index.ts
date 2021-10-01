@@ -85,7 +85,7 @@ app.use(express.static('public'))
 app.on('mount', () => {
     log('Mounted API!');
 })
-app.listen(config.port, () => {
+server.listen(config.port, () => {
     debug('Listening on ' + config.port + `\n ${config.prottocal}${config.domain}${config.usesport ?  ':' +  config.port + '/': '/'} `)
 Logger.ready(`[${config.domain}](${config.makeURL()})`)
   })
