@@ -16,7 +16,7 @@ import PassportHandler from './handlers/passport'
 import DB from './util/db'
 import logger from './logger'
 import { createServer } from 'http'
-import ioc from 'socket.io'
+import * as ioc from 'socket.io'
 //const   = express
 const Logger = new logger(null);
 const { debug,  log, error } = Logger
