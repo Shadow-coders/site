@@ -224,16 +224,17 @@ re()
     prefix.addEventListener('click', () => {
 const info =  document.getElementById('prefix-text')
 console.log('<%=config.makeURL()%>db/set')
-const body = JSON.stringify({ key: 'prefix_<%=guild.id%>', value: info.value });
+const body = { key: 'prefix_<%=guild.id%>', value: info.value } // JSON.stringify({ key: 'prefix_<%=guild.id%>', value: info.value });
 console.log(body)
-fetch(`<%=config.makeURL()%>db/set`, {
-    method: 'POST',
-    headers: { 'user-agent': 'Site@0.0.1', 'Content-type': 'application/json' },
-  body: body
-}).then(res => res.text()).then(t => {
-    if(t == 200) return alert('saved!')
-    alert(t)        
-})
+socket.emit('db:set', body.key, body.value)
+// fetch(`<%=config.makeURL()%>db/set`, {
+//     method: 'POST',
+//     headers: { 'user-agent': 'Site@0.0.1', 'Content-type': 'application/json' },
+//   body: body
+// }).then(res => res.text()).then(t => {
+//     if(t == 200) return alert('saved!')
+//     alert(t)        
+// })
 info.value = ''
     })
     console.log('Loaded script!')

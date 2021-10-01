@@ -26,12 +26,6 @@ const app = express()
 const server = createServer(app)
 const io = (ioc as any)(server)
 //debug(io)
-io.on('connection', (socket:any) => {
-//  log('Connection')
-  debug(config.makeURL() + socket.url)
- 
-  socket.on('ping', log)
-})
 app.use(express.json())
 let db:any ;
 let bot_db : any ;
@@ -86,6 +80,16 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 // SOCKET-IO
 
+io.on('connection', (socket:any) => {
+  //  log('Connection')
+    debug(config.makeURL() + socket.url)
+   socket.on('db:set', (key:String, value:any) => {
+  bot_db.set(key,value).catch((e:any) => {
+    socket.emit('error', e)
+  })
+   })
+    socket.on('ping', log)
+  })
 app.on('mount', () => {
     log('Mounted API!');
 })
