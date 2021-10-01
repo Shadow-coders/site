@@ -17,6 +17,7 @@ import DB from './util/db'
 import logger from './logger'
 import { createServer } from 'http'
 import ioc from 'socket.io'
+import { Socket } from 'socket.io'
 //const   = express
 const Logger = new logger(null);
 const { debug,  log, error } = Logger
@@ -24,10 +25,10 @@ const date:any = Date.now()
 const app = express()
 const server = createServer(app)
 const io = (ioc as any)(server)
-debug(io)
+//debug(io)
 io.on('connection', (socket:any) => {
-  log('Connection')
-  debug(socket)
+//  log('Connection')
+  debug(config.makeURL() + socket.name)
  
   socket.on('ping', log)
 })
