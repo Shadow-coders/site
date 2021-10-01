@@ -28,7 +28,7 @@ const io = (ioc as any)(server)
 //debug(io)
 io.on('connection', (socket:any) => {
 //  log('Connection')
-  debug(config.makeURL() + socket.name)
+  debug(config.makeURL() + socket.url)
  
   socket.on('ping', log)
 })
