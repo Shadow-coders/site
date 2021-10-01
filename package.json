@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/passport": "^1.0.7",
+    "@types/socket.io": "^3.0.2",
     "discord.js": "^13.1.0",
     "ejs": "^3.1.6",
     "ejs-locals": "^1.0.2",
@@ -21,7 +22,9 @@
     "node-fetch": "^2.5.0",
     "passport": "^0.4.1",
     "passport-discord": "^0.1.4",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "socket-io": "^1.0.0",
+    "socket.io": "^4.2.0"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.0",

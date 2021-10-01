@@ -15,11 +15,19 @@ import BotModel from './models/bot'
 import PassportHandler from './handlers/passport'
 import DB from './util/db'
 import logger from './logger'
+import { createServer } from 'http'
+import ioc from 'socket.io'
 //const   = express
 const Logger = new logger(null);
 const { debug,  log, error } = Logger
 const date:any = Date.now()
 const app = express()
+const server = createServer(app)
+const io = ioc(server)
+io.on('connection', (socket:any) => {
+  log('Connection')
+  socket.on('ping', console.log)
+})
 app.use(express.json())
 let db:any ;
 let bot_db : any ;
@@ -72,6 +80,7 @@ client.shadow = shadow;
 client.db = db;
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
+// SOCKET-IO
 
 app.on('mount', () => {
     log('Mounted API!');
