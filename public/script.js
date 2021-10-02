@@ -1,6 +1,10 @@
 console.log(`  ____  _               _                  ____          _               \n / ___|| |__   __ _  __| | _____      __  / ___|___   __| | ___ _ __ ___ \n \\___ \\| '_ \\ / _\` |/ _\` |/ _ \\ \\ /\\ / / | |   / _ \\ / _\` |/ _ \\ '__/ __|\n  ___) | | | | (_| | (_| | (_) \\ V  V /  | |__| (_) | (_| |  __/ |  \\__ \\\n |____/|_| |_|\\__,_|\\__,_|\\___/ \\_/\\_/    \\____\\___/ \\__,_|\\___|_|  |___/\n                                                                         `);
-let socket;
-if(io) socket = io();
-if(socket) {
-    socket.emit('page', window.location.href)
+try {
+    if(!socket) let socket;
+    if(io) socket = io();
+    if(socket) {
+        socket.emit('page', window.location.href)
+    }
+} catch (e) {
+
 }
