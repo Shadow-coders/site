@@ -15,12 +15,19 @@ console.error(file.e)
 }
 client.add = Add
 file = file.default
+if(Array.isArray(file)) {
+    for(const f of file) {
+if(!f.type) f.type = 'get'
+app[f.type](f.name, (req:any,res:any,next:Function) => file.execute(req,res,client,next))
+}
+} else {
 //console.log(file)
 if(!file.type) file.type = 'get'
 app[file.type](file.name, (req:any,res:any,next:Function) => file.execute(req,res,client,next), file.name == '/auth/discord/callback' ?function(
     req:any, res:any) {
         res.redirect('/') // Successful auth
     }  : function () {})
+}
 }
     return;
 }
