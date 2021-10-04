@@ -1,5 +1,7 @@
 console.log(`  ____  _               _                  ____          _               \n / ___|| |__   __ _  __| | _____      __  / ___|___   __| | ___ _ __ ___ \n \\___ \\| '_ \\ / _\` |/ _\` |/ _ \\ \\ /\\ / / | |   / _ \\ / _\` |/ _ \\ '__/ __|\n  ___) | | | | (_| | (_| | (_) \\ V  V /  | |__| (_) | (_| |  __/ |  \\__ \\\n |____/|_| |_|\\__,_|\\__,_|\\___/ \\_/\\_/    \\____\\___/ \\__,_|\\___|_|  |___/\n                                                                         `);
-const favicons =  (`<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+const favicons =  (`
+<!-- FAVICONS -->
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">

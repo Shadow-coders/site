@@ -219,6 +219,9 @@ re()
      <script src="/socket.io/socket.io.js"></script>
 <script>
     const socket = io();
+    socket.on('error', err => {
+        alert(err.toString())
+    })
     socket.emit('ping', 'settings')
     const prefix = document.getElementById('prefix-button')
     prefix.addEventListener('click', () => {

@@ -6,6 +6,9 @@ import LimiterE from 'express-rate-limit'
 import { Client } from 'discord.js';
 import auth from './structures/auth'
 import router from './routes/api';  
+import { Canvas } from 'canvas-constructor/cairo'
+import canvas from 'canvas'
+canvas.registerFont('impact.ttf', { family: 'Impact' });
 const client = new Client({ intents: ['GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES'], allowedMentions: { parse: [], repliedUser: true }});
 client.on('ready',() => {
 console.log('API bot connected')

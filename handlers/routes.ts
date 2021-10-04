@@ -18,7 +18,7 @@ file = file.default
 if(Array.isArray(file)) {
     for(const f of file) {
 if(!f.type) f.type = 'get'
-app[f.type](f.name, (req:any,res:any,next:Function) => file.execute(req,res,client,next))
+app[f.type](f.name, (req:any,res:any,next:Function) => f.execute(req,res,client,next))
 }
 } else {
 //console.log(file)
