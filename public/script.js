@@ -18,13 +18,3 @@ const favicons =  (`<link rel="apple-touch-icon" sizes="57x57" href="favicon/app
 let head = document.getElementsByTagName('head')[0]
 if(!head) head = document.createElement('head')
 head.innerHTML += favicons
-try {
-    if(!socket) let socket;
-    if(io) socket = io();
-    if(socket) {
-        socket.emit('page', window.location.href)
-    }
-    
-} catch (e) {
-
-}
