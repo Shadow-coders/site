@@ -6,6 +6,7 @@ import canvas from 'canvas'
 
 const router = Router();
 router.use('/basic', BasicRouter);
+// ENCODE WRAPPER
 router.use('/encode/', Encode)
 router.get('/', (req:any,res:any) => res.json({ version: 1.00, message: '' }))
 router.get('/testimage', async (req,res) => {
