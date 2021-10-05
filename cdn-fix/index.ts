@@ -4,7 +4,7 @@ const app = express();
 const baseurl = 'UR URL'
 const PORT = 8000;
 export default app;
-app.use('/files/', express.static('uploads'))
+app.use('/files/', express.static(__dirname +'/uploads'))
 // default options
 app.use(fileUpload());
 app.get('/ping', function(req:any, res:any) {
