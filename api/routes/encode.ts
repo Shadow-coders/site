@@ -6,9 +6,17 @@ router.get('/number', (req:any,res:any) => {
     })
 })
 router.all('/', (req:any,res:any) => {
-res.json({ version: 1.0 })
-})
+res.json({ version: 1.0, endpoints: [{
 
+}] })
+})
+router.all('/', (req:Request,res:Response,next:Function) => {
+if(req.method.toLowerCase() === 'get') return next()
+res.status(405).json({
+    message: 'Method not allowed',
+    status: 405
+})
+})
 router.get('/base64', (req:Request, res:Response) => {
     if(!req.query.text) return res.status(400).json({
         message: 'Missing Query Text!',
