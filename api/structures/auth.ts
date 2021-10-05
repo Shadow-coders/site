@@ -38,8 +38,12 @@ return auth;
 } 
 export default async function (req:any,res:any,next:Function) {
 const key = check(req,res)
-if(!key) return res.status(401).json({ message: 'No Authorization, you can get a key at https://discord.gg/some-link' })
-if(!await keys.getKey(key)) return res.status(403).json({ message: "Invalid Authorization, you can get a key at https://discord.gg/some-link "})
+if(!key) return res.status(401).json({
+ message: 'No Authorization, you can get a key at https://discord.gg/some-link' 
+})
+if(!await keys.getKey(key)) return res.status(403).json({
+ message: "Invalid Authorization, you can get a key at https://discord.gg/some-link "
+})
 res.auth = await keys.getKey(key)
 next()
 } // e
