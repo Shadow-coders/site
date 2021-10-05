@@ -4,6 +4,7 @@ import express from 'express'
 import child from 'child_process'
 import * as fs from 'fs'
 import ApiApp from './api/index'
+import CdnApp from './custom-cdn/index'
 import mongoose from 'mongoose'
 import ejs from 'ejs'
 import config from './config'
@@ -115,7 +116,9 @@ app.get('/auth/discord', passport.authenticate('discord'));
 // pp.get('/e', (req:any,res:any) => {
 //     //res.send()
 //     throw new Error('e');
-//   })a
+//   })
+
+app.use('/cdn', CdnApp)
   app.use((err: any, req: any,res: any,next:Function) => {
     res.send(`An error!!\n ${err.message}`)
     console.error(err.message)
