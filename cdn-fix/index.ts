@@ -14,8 +14,8 @@ app.get('/ping', function(req:any, res:any) {
 
 app.post('/upload', function(req:any, res:any) {
 //@ts-ignore
-    let sampleFile;
-  let uploadPath;
+    let sampleFile:any ;
+  let uploadPath:any ;
 console.log(req.files)
   if (!req.files || Object.keys(req.files).length === 0) {
     res.status(400).send('No files were uploaded.');
@@ -25,13 +25,21 @@ console.log(req.files)
 // console.log(req.body, req.files) debug
   sampleFile = req.files.file;
 if(!sampleFile) return res.status(403).end()
-  uploadPath = __dirname + '/uploads/' + sampleFile.name;
+
+let id = sampleFile.md5 + '.' + sampleFile.mimetype.split('/')[1]  
+uploadPath = __dirname + '/uploads/' + id;
 
   sampleFile.mv(uploadPath, function(err:any) {
     if (err) {
       return res.status(500).send(err);
-    }
-    res.send('Done')
+    }  
+    res.status(201).json({
+      id,
+      uploadPath,
+      sampleFile,
+      status: 201,
+      url: `https://shadow-bot.dev/cdn/files/${id}`
+    })
     });
 
 });
