@@ -1,4 +1,5 @@
 import keys from './key'
+// CHECK FOR KEY
 function check(req:any,res:any) {
 	//console.log(req.headers)
 	const setType = async (req:any,res:any,required?:any) => {
