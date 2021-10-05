@@ -23,8 +23,8 @@ console.log(req.files)
   }
  // eslint-disable-line
 // console.log(req.body, req.files) debug
-  sampleFile = req.files.sampleFile;
-
+  sampleFile = req.files.file;
+if(!sampleFile) return res.status(403).end()
   uploadPath = __dirname + '/uploads/' + sampleFile.name;
 
   sampleFile.mv(uploadPath, function(err:any) {
