@@ -13,10 +13,11 @@ app.get('/ping', function(req:any, res:any) {
 
 
 app.post('/upload', function(req:any, res:any) {
-//@ts-ignore
+if(!req.headers['Authorization']) return res.status(401)
+  //@ts-ignore
     let sampleFile:any ;
   let uploadPath:any ;
-console.log(req.files)
+//console.log(req.files)
   if (!req.files || Object.keys(req.files).length === 0) {
     res.status(400).send('No files were uploaded.');
     return;
