@@ -91,7 +91,7 @@ io.on('connection', (socket:any) => {
   })
    })
     socket.on('ping', log)
-  socket.on('window', window => {
+  socket.on('window', (window:any) => {
     
   })
   socket.on('data', (data:any, type:any) => {
