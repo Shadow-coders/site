@@ -3,7 +3,7 @@ import BasicRouter from './basic'
 import Encode from './encode'
 import { Canvas } from 'canvas-constructor/cairo'
 import canvas from 'canvas'
-
+import DecodeRouter from './decode'
 const router = Router();
 router.use('/basic', BasicRouter);
 // ENCODE WRAPPER
@@ -21,4 +21,5 @@ router.get('/testimage', async (req,res) => {
     res.set({'Content-Type': 'image/png'})
     res.send(image)
 })
+router.use('/decode', DecodeRouter)
 export default router;
