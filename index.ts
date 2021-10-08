@@ -83,13 +83,20 @@ app.use(express.static('public'))
 
 io.on('connection', (socket:any) => {
   //  log('Connection')
-    debug(config.makeURL() + socket.url)
+
+  //  debug(config.makeURL() + socket.url)
    socket.on('db:set', (key:String, value:any) => {
   bot_db.set(key,value).catch((e:any) => {
     socket.emit('error', e)
   })
    })
     socket.on('ping', log)
+  socket.on('window', window => {
+    
+  })
+  socket.on('data', (data:any, type:any) => {
+data.end() 
+  })
   })
 app.on('mount', () => {
     log('Mounted API!');
