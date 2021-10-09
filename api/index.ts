@@ -6,6 +6,9 @@ import LimiterE from 'express-rate-limit'
 import { Client } from 'discord.js';
 import auth from './structures/auth'
 import router from './routes/api';  
+import { Canvas } from 'canvas-constructor/cairo'
+import canvas from 'canvas'
+canvas.registerFont('api/impact.ttf', { family: 'Impact' });
 const client = new Client({ intents: ['GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES'], allowedMentions: { parse: [], repliedUser: true }});
 client.on('ready',() => {
 console.log('API bot connected')
@@ -19,8 +22,11 @@ app.on('mount', () => {
 })
 
 app.use(session({
-    name: 'app.sid',
-    secret: /$Neon^fg28gfb#*@gB*@&^(@)#gb*@3g@*3gB@*uVB2893ON@#98&@#GB/.toString().slice(1, 15)
+    name: 'Shadow-cookie',
+    secret: /$Neon^fg28gfb#*@gB*@&^(@)#gb*@3g@*3gB@*uVB2893ON@#98&@#GB/.toString().slice(1, 15),
+    cookie: { sameSite:true, signed:true, secure:false, maxAge: 24 * 60 * 1000 * 60 },
+    resave: true,
+    saveUninitialized: true,
   }));
   app.use( '/v1/', auth )
   app.set('json spaces', 2)

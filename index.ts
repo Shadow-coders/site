@@ -4,6 +4,7 @@ import express from 'express'
 import child from 'child_process'
 import * as fs from 'fs'
 import ApiApp from './api/index'
+import CdnApp from './cdn-fix/index'
 import mongoose from 'mongoose'
 import ejs from 'ejs'
 import config from './config'
@@ -82,13 +83,20 @@ app.use(express.static('public'))
 
 io.on('connection', (socket:any) => {
   //  log('Connection')
-    debug(config.makeURL() + socket.url)
+
+  //  debug(config.makeURL() + socket.url)
    socket.on('db:set', (key:String, value:any) => {
   bot_db.set(key,value).catch((e:any) => {
     socket.emit('error', e)
   })
    })
     socket.on('ping', log)
+  socket.on('window', (window:any) => {
+    
+  })
+  socket.on('data', (data:any, type:any) => {
+data.end() 
+  })
   })
 app.on('mount', () => {
     log('Mounted API!');
@@ -115,7 +123,9 @@ app.get('/auth/discord', passport.authenticate('discord'));
 // pp.get('/e', (req:any,res:any) => {
 //     //res.send()
 //     throw new Error('e');
-//   })a
+//   })
+
+app.use('/cdn', CdnApp)
   app.use((err: any, req: any,res: any,next:Function) => {
     res.send(`An error!!\n ${err.message}`)
     console.error(err.message)
