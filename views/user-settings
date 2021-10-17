@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Meta Tags-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">        
+       <style> 
+       body {
+    background-color: #212529;
+    color: white;
+    height: 100%;
+}
+
+.navbar-brand img {
+    border-radius: 20px;
+}
+
+form.d-flex button {
+    background-color: rgb(121 145 246);
+    color: white;
+    outline: none;
+    border: none;
+}
+
+form.d-flex button:hover {
+    background-color: rgb(166 168 253);
+}
+
+/* MAIN BODY */
+
+.head {
+    padding-top: 260px;
+    color: white;
+    line-height: 1.3;
+    text-align: center;
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+.subtext {
+    padding-bottom: 330px;
+    color: rgb(255, 255, 255, .55);
+    line-height: 1.3;
+    text-align: center;
+
+}
+
+.container {
+    max-width: 1300px;
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+.pt-10 {
+    padding-top: 10rem!important;
+}
+
+.pt-16 {
+    padding-top: 20rem!important;
+}
+
+.custom-1 img {
+  height: 269px;
+  width: 510px;
+  float: right;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.custom-1 h3 {
+    padding-top: 60px;
+}
+
+.custom-1 p {
+    color: rgb(255, 255, 255, .55);
+    width: 40%;
+}
+
+.custom-2 img {
+    float: left;
+    height: 270px;
+    width: 540px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.custom-2 h3 {
+    padding-top: 60px;
+    float: right;
+    width: 40%;
+}
+
+.custom-2 p {
+    float: right;
+    width: 40%;
+    color: rgb(255, 255, 255, .55);
+}
+
+
+/* MEDIA */
+
+@media screen and (max-width: 967px) {
+    .custom-1 img {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .pt-10 {
+        padding-top: 5rem!important;
+    }
+    .pt-16 {
+        padding-top: 2rem!important;
+    }
+
+    .custom-1 p {
+        text-align: center;
+        width: 100%;
+    }
+
+    .custom-1 h3 {
+        text-align: center;
+    }
+
+    .custom-2 p {
+        text-align: center;
+        float: none;
+        width: 100%;
+    }
+
+    .custom-2 h3 {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    .custom-2 img {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+    
+}
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  color: white !important;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  color: whitesmoke;
+}
+
+.sidenav a:hover {
+  color: grey;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+       </style>
+        <title> Shadow </title>    
+    </head>
+ <div class="sidenav">
+        <br> <br>
+        <a href="<%=config.makeURL()%>dashboard/<%=guild.id%>/about" style="color:white;">About</a>
+        <a href="#services">Services</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+</div>
+    <body>
+        <!--HEADER-->
+        <%- header -%>
+<!-- IF SENT = TRUE -->
+<% if(req.query.sent)  { %>
+<script>
+function re() {
+alert('Saved! ' + " the data <%=data%>");
+}
+re()
+</script>
+<% } %>
+    <!--MAIN BODY-->
+    Soon ;)
+
+    </div>         
+<!-- end of BODY -->
+       <!--JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </body>
+</html>
