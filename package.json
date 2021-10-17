@@ -5,7 +5,7 @@
   "typings": "declarations.d.ts",
   "scripts": {
     "start": "ts-node index.ts --config tsconfig.json",
-    "build": "exho no build"
+    "build": "echo no build"
   },
   "repository": "https://github.com/Shadow-coders/site.git",
   "author": "Neon",
