@@ -80,7 +80,7 @@ client.db = db;
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 // SOCKET-IO
-
+io.on('disconnect', () => log('A socket has disconnected'))
 io.on('connection', (socket:any) => {
   //  log('Connection')
 
@@ -126,16 +126,19 @@ app.get('/auth/discord', passport.authenticate('discord'));
 //   })
 
 app.use('/cdn', CdnApp)
+
+setTimeout(() => {
   app.use((err: any, req: any,res: any,next:Function) => {
     res.send(`An error!!\n ${err.message}`)
     console.error(err.message)
 // return next(err.message)
 return;
 })
-app.use('*', (req: any,res: any) => {
- //   debug(404)
-    res.send('404')
-})
+  app.use('*', (req: any,res: any) => {
+    //   debug(404)
+       res.send('404')
+   })
+},1 * 1000)
 // setInterval(() => {
 //   log('Test')
 // },2e3)
