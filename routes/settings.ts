@@ -9,7 +9,7 @@ export default {
 			username: user.username,
 			disc: user.discriminator,
 			id: user.id,
-		    client,
+		    client: bot,
 			req, res,
             config,
 		})
