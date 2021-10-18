@@ -14,6 +14,7 @@ const user = req.user
 		    client: bot,
 			req, res,
             config,
+			header
 		})
     }
 }
