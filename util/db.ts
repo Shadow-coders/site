@@ -50,7 +50,7 @@ res({ key, value })
 
 }
 async get(key:String):Promise<null | any> {
-
+if(!(key)) return null;
 const data:any = await this.Model.findOne({ key: key })
 //console.log(data)
 if(!data) return null;
@@ -66,6 +66,7 @@ res(data)
 }) 
 }
 public delete(key:String): Promise<Boolean> {
+if(!(key)) return false;
 return new Promise(async (res, rej) => {
 const k = await this.Model.findOne({ key: key })
 if(!k) return rej(false);
