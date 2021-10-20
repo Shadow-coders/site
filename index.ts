@@ -70,16 +70,23 @@ shadow.on('ready', () => {
   debug('Took ' + (Date.now() - date) + 'ms time to load')
   shadow.guilds.cache.forEach((g:any) => g.members.fetch())
   Logger.ready(shadow)
+
 })
 const client:any = new Client()
 client.connect().then(() => {
   Logger.ready(client)
+setTimeout(() => {
+  
+  client.channels.cache.get('832694631459192903').message.cache.fetch()
+
+  client.channels.cache.get('832694631459192903').message.cache.filter((m:any) => m.webhook).forEach((m:any) => m.crosspost())
+}, 4e3)
 })
 client.shadow = shadow;
 client.db = db;
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
-// SOCKET-IO
+// SOCKET-IO`
 io.on('disconnect', () => log('A socket has disconnected'))
 io.on('connection', (socket:any) => {
   //  log('Connection')
