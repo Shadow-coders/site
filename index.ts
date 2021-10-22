@@ -75,12 +75,12 @@ shadow.on('ready', () => {
 const client:any = new Client()
 client.connect().then(() => {
   Logger.ready(client)
-setTimeout(() => {
-  client.channels.cache.get('832694631459192903').fetch()
-  client.channels.cache.get('832694631459192903').message.cache.fetch()
-
-  client.channels.cache.get('832694631459192903').message.cache.filter((m:any) => m.webhook).forEach((m:any) => m.crosspost())
-}, 4e5)
+  const publishMessages = async () => {
+   await client.channels.cache.get('832694631459192903').fetch()
+   await client.channels.cache.get('832694631459192903').messages.fetch()
+   await client.channels.cache.get('832694631459192903').messages.cache.toJSON().slice(0,10).filter((m:any) => m.webhookId).forEach((m:any) => m.crosspost())
+  }
+setTimeout(publishMessages, 4e4)
 })
 client.shadow = shadow;
 client.db = db;
