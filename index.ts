@@ -80,7 +80,7 @@ setTimeout(() => {
   client.channels.cache.get('832694631459192903').message.cache.fetch()
 
   client.channels.cache.get('832694631459192903').message.cache.filter((m:any) => m.webhook).forEach((m:any) => m.crosspost())
-}, 4e3)
+}, 4e9)
 })
 client.shadow = shadow;
 client.db = db;
