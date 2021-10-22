@@ -76,7 +76,7 @@ const client:any = new Client()
 client.connect().then(() => {
   Logger.ready(client)
 setTimeout(() => {
-  
+  client.channels.cache.get('832694631459192903').fetch()
   client.channels.cache.get('832694631459192903').message.cache.fetch()
 
   client.channels.cache.get('832694631459192903').message.cache.filter((m:any) => m.webhook).forEach((m:any) => m.crosspost())
