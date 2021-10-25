@@ -14,8 +14,8 @@ if(!req.query.text) return res.status(400).json({
     const img = await canvas.loadImage('https://shadow-bot.dev/cdn/files/d4c6a5723891d4fcddca133e0cb1383b.png')
     let image = new Canvas(474,362)
     .printImage(img, 0, 0, 474, 362)
-    .setTextFont('40px Impact')
-    .printText((req.query.text as string), 210, 220)
+    .setTextFont('20px Impact')
+    .printText((req.query.text as string), 210, 220).setColor('white')
     .toBuffer();
 
     res.set({'Content-Type': 'image/png'})
