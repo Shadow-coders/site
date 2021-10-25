@@ -12,10 +12,11 @@ router.get('/randomquote', async (req:any, res:any) => {
    const getQuote = async (size:number): Promise<void> => {
     const Resp = await fetch("https://animechan.vercel.app/api/quotes")
     let Resp_json:Array<any> = await Resp.json()
+    console.log(Resp_json)
     Resp_json = Resp_json.map((q:any) => {
         q.message = `"${q.quote}" - ${q.character} ${q.anime}`
     })
-    let result:any = size == 1 ?{ message: Resp_json[0] }: { message: Resp_json }
+    let result:any = size == 1 ? { message: Resp_json[0] }: { message: Resp_json }
     result.status = 200;
     result.size = req.query.size;
     res.json(result);
