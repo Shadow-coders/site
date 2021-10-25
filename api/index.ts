@@ -24,7 +24,7 @@ app.use(statusMonitor);
 app.on('mount', () => {
     console.log('Mounted API!')
 })
-
+app.set('domain', 'api.'+config.domain);
 app.use(session({
     name: 'Shadow-cookie',
     secret: /$Neon^fg28gfb#*@gB*@&^(@)#gb*@3g@*3gB@*uVB2893ON@#98&@#GB/.toString().slice(1, 15),
@@ -37,13 +37,17 @@ app.use(session({
   app.use(Limiter({ client }))
 app.use('/v1/', router)
   app.get('/', (req:any,res:any) => {
+    const endpoints = ['v1', 'status'].map((e:string) => `/${e}`)
     res.json({
-     endpoints: [] 
+     endpoints,
+     version: 1,
+     dev: true
     })
 })
 app.get('/authinfo', (req:any,res:any) => {
     res.json(res.auth)
 })
+
 // app.get('/limit', LimiterE({
 //     windowMs: 60 * 1000, // 15 minutes
 //     max: 1,

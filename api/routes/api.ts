@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import BasicRouter from './basic'
 import Encode from './encode'
+import Anime from './Anime'
 import { Canvas } from 'canvas-constructor/cairo'
 import canvas from 'canvas'
 import DecodeRouter from './decode'
@@ -8,6 +9,7 @@ const router = Router();
 router.use('/basic', BasicRouter);
 // ENCODE WRAPPER
 router.use('/encode/', Encode)
+router.use('/anime', Anime)
 router.get('/', (req:any,res:any) => res.json({ version: 1.00, message: '' }))
 router.get('/testimage', async (req,res) => {
     const img = await canvas.loadImage('https://th.bing.com/th/id/OIP.v8mzpYYKhQjNP0NYqp2DDwHaFq?pid=ImgDet&rs=1')
