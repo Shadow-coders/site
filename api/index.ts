@@ -47,7 +47,9 @@ app.use('/v1/', router)
 app.get('/authinfo', (req:any,res:any) => {
     res.json(res.auth)
 })
-
+app.use('*', (req:any,res:any) => {
+  res.json({ status: 404, message: 'Unkowen endpoint', url: req.url })
+})
 // app.get('/limit', LimiterE({
 //     windowMs: 60 * 1000, // 15 minutes
 //     max: 1,
