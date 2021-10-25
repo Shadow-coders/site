@@ -1,4 +1,5 @@
 const express = require('express');
+const {shadow_token } = require('../config')
 const fileUpload = require('express-fileupload');
 const app = express();
 const baseurl = 'UR URL'
@@ -14,7 +15,7 @@ app.get('/ping', function(req:any, res:any) {
 
 app.post('/upload', function(req:any, res:any) {
   console.log(req.body, req.files)
-if(!req.headers['Authorization']) return res.status(401)
+if(!(req.headers['Authorization'] === shadow_token)) return res.status(401).json({ message: 'Access denied' })
   //@ts-ignore
     let sampleFile:any ;
   let uploadPath:any ;
