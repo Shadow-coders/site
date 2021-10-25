@@ -23,7 +23,7 @@ if(!req.headers['Authorization']) return res.status(401)
     return;
   }
  // eslint-disable-line
-// console.log(req.body, req.files) debug
+ console.log(req.body, req.files) //debug
   sampleFile = req.files.file;
 if(!sampleFile) return res.status(403).end()
 

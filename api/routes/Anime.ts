@@ -30,7 +30,8 @@ router.get('/randomquote', async (req:any, res:any) => {
    })
 
    if(!req.query.size) {
-getQuote(1)
+return getQuote(1)
    }
+   getQuote(req.query.size)
 })
 export default router;
