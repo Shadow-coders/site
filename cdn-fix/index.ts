@@ -13,6 +13,7 @@ app.get('/ping', function(req:any, res:any) {
 
 
 app.post('/upload', function(req:any, res:any) {
+  console.log(req.body, req.files)
 if(!req.headers['Authorization']) return res.status(401)
   //@ts-ignore
     let sampleFile:any ;
@@ -23,7 +24,7 @@ if(!req.headers['Authorization']) return res.status(401)
     return;
   }
  // eslint-disable-line
- console.log(req.body, req.files) //debug
+ //debug
   sampleFile = req.files.file;
 if(!sampleFile) return res.status(403).end()
 
