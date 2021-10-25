@@ -4,7 +4,8 @@ const router = express.Router();
 
 router.all('/', (req:any,res:any) => {
 //@ts-ignore
-const data:any = { version: 1, /* VERSION NUMBER */ message: this.endpoints.join('\n'), endpoints: ['GET /randomquote']  }
+let data:any = { version: 1, /* VERSION NUMBER */ message: undefined, endpoints: ['GET /randomquote']  }
+data.message = data.endpoints.join('\n')
 res.json(data)
 })
 router.get('/randomquote', async (req:any, res:any) => {
@@ -23,7 +24,7 @@ router.get('/randomquote', async (req:any, res:any) => {
        message: "Must be under 10",
        status: 400
    })
-   
+
    if(!req.query.size) {
 getQuote(1)
    }
