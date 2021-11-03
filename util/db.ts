@@ -65,7 +65,7 @@ let data = await this.Model.find()
 res(data)
 }) 
 }
-public delete(key:String): Promise<Boolean> {
+public delete(key:String): Promise<Boolean> | Boolean {
 if(!(key)) return false;
 return new Promise(async (res, rej) => {
 const k = await this.Model.findOne({ key: key })
