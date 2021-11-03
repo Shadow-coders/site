@@ -19,8 +19,16 @@
             background: #111;
         }
         </style>
+         <script src="/socket.io/socket.io.js"></script>
     <script>
-        jQuery(function($, undefined) {
+      const socket = io();
+              //console.log(socket, io)
+              socket.emit('ping', 'terminal')
+let parse, sshStream, exec;
+socket.on('util', item => parse = item.inspect)
+socket.on('sshStream', stream => sshStream = stream)
+socket.on('child_process', child => exec = child.exec)
+              jQuery(function($, undefined) {
  $('#term_demo').terminal(function(command) {
    if (command == 'help') {
      this.echo("Type the following.\n");

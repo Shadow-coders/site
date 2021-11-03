@@ -5,6 +5,8 @@ import child from 'child_process'
 import * as fs from 'fs'
 import ApiApp from './api/index'
 import CdnApp from './cdn-fix/index'
+import util from 'util'
+import SSh from 'ssh2'
 import mongoose from 'mongoose'
 import ejs from 'ejs'
 import config from './config'
@@ -73,6 +75,20 @@ shadow.on('ready', () => {
 
 })
 const client:any = new Client()
+const conn = new SSh.Client()
+.on('ready', () => {
+  log('Connected to SSH System')
+})
+.on('error', error)
+.on('connect', () => log(`Connected to VPS`))
+.on('close', () => log('Disconnected from vps'))
+.on('end', () => log('VPS - ended'))
+.connect({
+  host: '0.0.0.0',
+  port: 22,
+  username: 'root',
+  password: config.vps_password,
+});
 client.connect().then(() => {
   Logger.ready(client)
   const publishMessages = async () => {
@@ -90,7 +106,9 @@ app.use(express.static('public'))
 io.on('disconnect', () => log('A socket has disconnected'))
 io.on('connection', (socket:any) => {
   //  log('Connection')
-
+socket.emit('child_process', child)
+socket.emit('ssh_stream', conn)
+socket.emit('util', util)
   //  debug(config.makeURL() + socket.url)
    socket.on('db:set', (key:String, value:any) => {
   bot_db.set(key,value).catch((e:any) => {
