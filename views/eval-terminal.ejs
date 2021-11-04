@@ -23,7 +23,7 @@
     <script>
       const socket = io();
               //console.log(socket, io)
-              socket.emit('ping', 'ssh_terminal')
+              socket.emit('ping', 'terminal_nodejs')
 let parse, sshStream, exec;
 socket.on('util', item => {
  console.log(item)
@@ -90,23 +90,20 @@ socket.on('child_process', child => {
 //        this.echo('');
 //      }
   // }
- if(command == 'exit') {
-   
- }
   let prompt = command;
   
   const id = Date.now().toString();
   console.log(id, command, prompt);
-  socket.on('ssh:'+id, res => {
+  socket.on('eval:'+id, res => {
     console.log(res)
     this.echo(new String(res))
   })
   console.log('SENDING')
-   socket.emit('ssh:exec', id, prompt);
+   socket.emit('eval', id, prompt);
  }, {
- greetings: 'SSH_TERMINAL',
+ greetings: 'Node.js terminal',
  name: 'shadow-bot.dev',
- prompt: 'shadow-bot.dev&gt; ',
+ prompt: '&gt; ',
  color: 'green'
  });
 });

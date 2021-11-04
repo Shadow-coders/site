@@ -124,6 +124,14 @@ socket.on('util:prase', (id:any, thing:any) => {
     socket.emit('error', e)
   })
    })
+   socket.on('eval', async (id:any, thing:any) => {
+    try{
+      const res = await eval(thing);
+      socket.emit('eval:'+id, util.inspect(res))
+    } catch (e:any) {
+socket.emit('eval:'+id, util.inspect(e))
+    }
+   })
    socket.on('ssh:exec', (id:any, thing:any) => {
      log(1)
      console.log(id,thing)
