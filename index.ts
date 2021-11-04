@@ -106,10 +106,15 @@ app.use(express.static('public'))
 io.on('disconnect', () => log('A socket has disconnected'))
 io.on('connection', (socket:any) => {
   //  log('Connection')
-socket.emit('child_process', child)
-socket.emit('ssh_stream', conn)
-socket.emit('util', util)
-  //  debug(config.makeURL() + socket.url)
+setTimeout(async () => {
+await socket.emit('child_process', child)
+util.promisify(setTimeout)(100)
+await socket.emit('ssh_stream', conn)
+util.promisify(setTimeout)(100)
+await socket.emit('util', util)
+})
+
+//  debug(config.makeURL() + socket.url)
    socket.on('db:set', (key:String, value:any) => {
   bot_db.set(key,value).catch((e:any) => {
     socket.emit('error', e)
