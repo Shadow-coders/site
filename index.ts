@@ -108,19 +108,30 @@ app.use(express.static('public'))
 io.on('disconnect', () => log('A socket has disconnected'))
 io.on('connection', (socket:any) => {
   //  log('Connection')
-  setTimeout(async () => {
-await socket.emit('child_process', child)
-//util.promisify(setTimeout)(100)
-await socket.emit('sshStream', conn)
+//   setTimeout(async () => {
+// await socket.emit('child_process', child)
+// //util.promisify(setTimeout)(100)
+// await socket.emit('sshStream', conn)
 
-await socket.emit('util', util)
+// await socket.emit('util', util)
+// })
+socket.on('util:prase', (id:any, thing:any) => {
+  socket.emit('util:'+id, util.inspect(thing))
 })
-
 //  debug(config.makeURL() + socket.url)
    socket.on('db:set', (key:String, value:any) => {
   bot_db.set(key,value).catch((e:any) => {
     socket.emit('error', e)
   })
+   })
+   socket.on('ssh:exec', (id:any, thing:any) => {
+    let data = '' 
+    conn.exec(thing, (err:any, stream) => {
+stream.on('data', (d:any) => socket.emit('ssh:'+id,d))
+stream.on('close', () => {
+socket.emit('ssh:'+ id, data)  
+})
+     })
    })
     socket.on('ping', log)
   socket.on('window', (window:any) => {
