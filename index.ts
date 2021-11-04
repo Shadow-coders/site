@@ -129,7 +129,7 @@ socket.on('util:prase', (id:any, thing:any) => {
       const res = await eval(thing);
       socket.emit('eval:'+id, util.inspect(res))
     } catch (e:any) {
-socket.emit('eval:'+id, util.inspect(e))
+socket.emit('eval:'+id, util.inspect(e), true)
     }
    })
    socket.on('ssh:exec', (id:any, thing:any) => {

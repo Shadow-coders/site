@@ -94,9 +94,9 @@ socket.on('child_process', child => {
   
   const id = Date.now().toString();
   console.log(id, command, prompt);
-  socket.on('eval:'+id, res => {
+  socket.on('eval:'+id, (res, error) => {
     console.log(res)
-    this.echo(new String(res))
+    this.echo(error ? `<div style="color:red;">${new String(res)}</div>` : new String(res))
   })
   console.log('SENDING')
    socket.emit('eval', id, prompt);
