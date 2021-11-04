@@ -90,14 +90,14 @@ socket.on('child_process', child => {
 //        this.echo('');
 //      }
   // }
- const exec = (prompt) => {
-   const id = (Date.now()) - new Date().getDay()
+ 
+  let prompt = command;
+  
+  const id = (Date.now()) - new Date().getDay()
   socket.on('ssh:'+id, res => {
     this.echo(new String(res))
   })
    socket.emit('ssh:exec', Date.now(), prompt);
-  }
-  exec(command);
  }, {
  greetings: 'Hi dere, terminal addicts. want help any time just type help',
  name: 'shadow-bot.dev',
