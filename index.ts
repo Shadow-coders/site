@@ -131,8 +131,8 @@ socket.on('util:prase', (id:any, thing:any) => {
     conn.exec(thing, (err:any, stream) => {
 log(2)
       stream.on('data', (d:any) => {
-    socket.emit('ssh:'+id,d) 
-    console.log('got data' + `typeof: ${typeof d} \n ${d.toString()}`, d)
+    socket.emit('ssh:'+id,d.toString()) 
+  //  console.log('got data' + `typeof: ${typeof d} \n ${d.toString()}`, d)
     })
 stream.on('close', () => {
   log(3)
