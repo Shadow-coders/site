@@ -25,9 +25,18 @@
               //console.log(socket, io)
               socket.emit('ping', 'terminal')
 let parse, sshStream, exec;
-socket.on('util', item => parse = item.inspect)
-socket.on('sshStream', stream => sshStream = stream)
-socket.on('child_process', child => exec = child.exec)
+socket.on('util', item => {
+ console.log(item)
+  parse = item.inspect
+})
+socket.on('sshStream', stream => {
+console.log(stream)
+  sshStream = stream
+})
+socket.on('child_process', child => {
+  console.log(child)
+  exec = child.exec
+})
               jQuery(function($, undefined) {
  $('#term_demo').terminal(function(command) {
    if (command == 'help') {

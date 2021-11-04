@@ -111,7 +111,7 @@ io.on('connection', (socket:any) => {
   setTimeout(async () => {
 await socket.emit('child_process', child)
 //util.promisify(setTimeout)(100)
-await socket.emit('ssh_stream', conn)
+await socket.emit('sshStream', conn)
 
 await socket.emit('util', util)
 })
