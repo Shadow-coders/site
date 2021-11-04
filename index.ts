@@ -132,7 +132,7 @@ socket.on('util:prase', (id:any, thing:any) => {
 log(2)
       stream.on('data', (d:any) => {
     socket.emit('ssh:'+id,d) 
-    log('got data')
+    log('got data' + `typeof: ${typeof d} \n ${d.toString()}`)
     })
 stream.on('close', () => {
   log(3)
