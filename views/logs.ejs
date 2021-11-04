@@ -40,80 +40,89 @@ socket.on('child_process', child => {
   console.log(child)
   exec = child.exec
 })
-jQuery(function($, undefined) {
- $('#term_demo').terminal(function(command) {
-  //  if (command == 'help') {
-  //    this.echo("Type the following.\n");
-  //    this.echo("1. Companies worked for or experience=&gt; exp")
-  //    this.echo("2. Socials =&gt; social\n");
-  //  } 
- 
- //  if (command == 'social'){ .  This was wrong. 
-//    else if (command == 'social'){
-//      this.echo("mailto:gaurav.dev.iiitm@gmail.com\n")
-//      this.echo("https://www.github.com/chowmean\n")
-//      this.echo("https://www.facebook.com/chowmean\n")
-//      this.echo("https://www.twitter.com/gauravchowmean\n")
-//      this.echo("https://www.linkedin.com/in/chowmean\n")
-//    }
-
-// //   if (command == 'exp'){ .This was wrong.&nbsp;
-//    else if (command == 'exp'){
-//      this.echo("\n")
-//      this.echo("Platform Engineer, Practo technologies. Jan 2017 - Present\n\n")
-//      this.echo("\n")
-//      this.echo("Software Developement Engineer, Practo technologies. May 2016 - Dec 2016\n\n")
-//      this.echo("\n")
-//      this.echo("Freelance Software Architect, Unihire. Mar 2016 - April 2016\n\n")
-//      this.echo("\n")
-//      this.echo("Laravel and Angular Developer, Infinite Eurekas. Oct 2015 - Nov 2015\n\n")
-//      this.echo("\n")
-//      this.echo("Python Developer, Lazylad. Sep 2015 - Oct 2015\n\n")
-//      this.echo("\n")
-//      this.echo("Software Developer, Frankly.me, May 2015 - Jul 2015\n\n")
-//      this.echo("\n")
-//      this.echo("Software Developer, GeekShastra Pvt Ltd, May 2014 - Jul 2014\n\n")
-//      this.echo("\n")
-//      this.echo("Software Developer, Decent Solutions, Dec 2013 - Mar 2014\n\n")
-//      this.echo("\n")
-//    }
-
-//    else {
-//      if (command !== '') {
-//        try {
-//          var result = window.eval(command);
-//          if (result !== undefined) {
-//            this.echo(new String(result));
-//          }
-//        } catch(e) {
-//          this.error(new String(e));
-//        }
-//      } else {
-//        this.echo('');
-//      }
-  // }
-  if(exec) return;
-  let prompt = 'pm2 logs ' + name;
-  
+let line = 0;
+  let command = 'pm2 logs ' + name;
+  const send = (s, e) => {
+      const div = document.createElement('div');
+      div.innerHTML = s;
+      div.style = 'color: white;'
+      div.id = `text-${line}`
+      line++
+      document.getElementById('output').appendChild(div)
+  }
   const id = Date.now().toString();
-  console.log(id, command, prompt);
+  console.log(id, command);
   socket.on('ssh:'+id, res => {
     console.log(res)
-    this.echo(new String(res))
+    send(new String(res))
   })
   console.log('SENDING')
-   socket.emit('ssh:exec', id, prompt);
- }, {
- greetings: name + ' logs',
- name: name,
- prompt: '>',
- color: 'green'
- });
-});
+   socket.emit('ssh:exec', id, command);
+exec = true;
+// jQuery(function($, undefined) {
+//  $('#term_demo').terminal(function(command) {
+//   //  if (command == 'help') {
+//   //    this.echo("Type the following.\n");
+//   //    this.echo("1. Companies worked for or experience=&gt; exp")
+//   //    this.echo("2. Socials =&gt; social\n");
+//   //  } 
+ 
+//  //  if (command == 'social'){ .  This was wrong. 
+// //    else if (command == 'social'){
+// //      this.echo("mailto:gaurav.dev.iiitm@gmail.com\n")
+// //      this.echo("https://www.github.com/chowmean\n")
+// //      this.echo("https://www.facebook.com/chowmean\n")
+// //      this.echo("https://www.twitter.com/gauravchowmean\n")
+// //      this.echo("https://www.linkedin.com/in/chowmean\n")
+// //    }
+
+// // //   if (command == 'exp'){ .This was wrong.&nbsp;
+// //    else if (command == 'exp'){
+// //      this.echo("\n")
+// //      this.echo("Platform Engineer, Practo technologies. Jan 2017 - Present\n\n")
+// //      this.echo("\n")
+// //      this.echo("Software Developement Engineer, Practo technologies. May 2016 - Dec 2016\n\n")
+// //      this.echo("\n")
+// //      this.echo("Freelance Software Architect, Unihire. Mar 2016 - April 2016\n\n")
+// //      this.echo("\n")
+// //      this.echo("Laravel and Angular Developer, Infinite Eurekas. Oct 2015 - Nov 2015\n\n")
+// //      this.echo("\n")
+// //      this.echo("Python Developer, Lazylad. Sep 2015 - Oct 2015\n\n")
+// //      this.echo("\n")
+// //      this.echo("Software Developer, Frankly.me, May 2015 - Jul 2015\n\n")
+// //      this.echo("\n")
+// //      this.echo("Software Developer, GeekShastra Pvt Ltd, May 2014 - Jul 2014\n\n")
+// //      this.echo("\n")
+// //      this.echo("Software Developer, Decent Solutions, Dec 2013 - Mar 2014\n\n")
+// //      this.echo("\n")
+// //    }
+
+// //    else {
+// //      if (command !== '') {
+// //        try {
+// //          var result = window.eval(command);
+// //          if (result !== undefined) {
+// //            this.echo(new String(result));
+// //          }
+// //        } catch(e) {
+// //          this.error(new String(e));
+// //        }
+// //      } else {
+// //        this.echo('');
+// //      }
+//   // }
+   
+// }, {
+//  greetings: name + ' logs',
+//  name: name,
+//  prompt: '>',
+//  color: 'green'
+//  });
+// });
     </script>   
     </head>
     <body>
-        <div id="term_demo">
+        <div id="output">
         </div>
     </body>
 </html>
