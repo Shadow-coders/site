@@ -51,6 +51,7 @@ const auth = (req:any,res:any,next:any) => {
 }
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', ApiApp)
+app.get('/close', (req:any,res:any) => res.send("<script>window.close();</script >"))
 app.get('/db/get', auth, (req:any,res:any) => {
   bot_db.get(req.query.key).then((d:any) => {
       res.json({ data: d })
@@ -76,7 +77,8 @@ shadow.on('ready', () => {
 })
 const client:any = new Client()
 const conn = new SSh.Client()
-.on('ready', () => {
+
+conn.on('ready', () => {
   log('Connected to SSH System')
 })
 .on('error', error)
@@ -108,9 +110,9 @@ io.on('connection', (socket:any) => {
   //  log('Connection')
   setTimeout(async () => {
 await socket.emit('child_process', child)
-util.promisify(setTimeout)(100)
+//util.promisify(setTimeout)(100)
 await socket.emit('ssh_stream', conn)
-util.promisify(setTimeout)(100)
+
 await socket.emit('util', util)
 })
 
