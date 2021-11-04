@@ -106,7 +106,7 @@ app.use(express.static('public'))
 io.on('disconnect', () => log('A socket has disconnected'))
 io.on('connection', (socket:any) => {
   //  log('Connection')
-setTimeout(async () => {
+  setTimeout(async () => {
 await socket.emit('child_process', child)
 util.promisify(setTimeout)(100)
 await socket.emit('ssh_stream', conn)
