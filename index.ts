@@ -125,10 +125,17 @@ socket.on('util:prase', (id:any, thing:any) => {
   })
    })
    socket.on('ssh:exec', (id:any, thing:any) => {
+     log(1)
+     console.log(id,thing)
     let data = '' 
     conn.exec(thing, (err:any, stream) => {
-stream.on('data', (d:any) => socket.emit('ssh:'+id,d))
+log(2)
+      stream.on('data', (d:any) => {
+    socket.emit('ssh:'+id,d) 
+    log('got data')
+    })
 stream.on('close', () => {
+  log(3)
 socket.emit('ssh:'+ id, data)  
 })
      })
