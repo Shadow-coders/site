@@ -20,7 +20,6 @@ import DB from './util/db'
 import logger from './logger'
 import { createServer } from 'http'
 import ioc from 'socket.io'
-import { Socket } from 'socket.io'
 //const   = express
 const Logger = new logger(null);
 const { debug,  log, error } = Logger
@@ -107,7 +106,7 @@ app.use(express.static('public'))
 // SOCKET-IO`
 io.on('disconnect', () => log('A socket has disconnected'))
 io.on('connection', (socket:any) => {
-  //  log('Connection')
+    log('Connection with ' + socket.toString())
 //   setTimeout(async () => {
 // await socket.emit('child_process', child)
 // //util.promisify(setTimeout)(100)
