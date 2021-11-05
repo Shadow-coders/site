@@ -26,7 +26,9 @@ const { debug,  log, error } = Logger
 const date:any = Date.now()
 const app = express()
 const server = createServer(app)
-const io = (ioc as any)(server)
+const io = (ioc as any)(server,  {
+  allowEIO3: true // false by default
+})
 //debug(io)
 app.use(express.json())
 let db:any ;
