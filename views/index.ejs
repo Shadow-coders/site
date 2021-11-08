@@ -17,7 +17,6 @@
       <meta name="description" content="Shadow bot discord bot website">
       <meta name='title' content="Shadow Bot">
       <meta name="keywords" content="Discord, Shadow, Site, HTML,js,Typerscript,css, Music , discordbot, dashboard">
-      <meta http-equiv="refresh" content="60">
       <meta name="robots" content="index,follow" />
       <meta name="url" content="<%=config.makeURL()%>">
       <meta name="abstract" content="">
@@ -87,7 +86,13 @@
         <script>
              const socket = io();
              console.log(socket, io)
-             socket.emit('ping', 'index')
+             socket.emit('ping', 'index', 1e5)
+             socket.on('ping', (time) => {
+                 console.debug('ping received within ' + time + 'ms')
+                 setTimeout(() => {
+socket.emit('ping', 'index', time)
+                 }, time)
+             })
         </script>
     </body>
 </html>
