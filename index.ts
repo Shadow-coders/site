@@ -156,6 +156,7 @@ socket.emit('ssh:'+ id, data)
         timeout = Date.now() - time + 1000  
       }
       debug(2)
+      debug(timeout)
       debug(`Received ping from ${name}, waiting for ping back`)  
       setTimeout(() => {
         debug('Sending ping after ' + (Date.now() - time) + 'ms')  
