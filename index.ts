@@ -149,7 +149,7 @@ socket.emit('ssh:'+ id, data)
 })
      })
    })
-    socket.on('ping', (name: string, timeout: number | undefined) => {
+    socket.on('ping:server', (name: string, timeout: number | undefined) => {
       let time = Date.now()
       if(!timeout) {
         timeout = Date.now() - time + 1000

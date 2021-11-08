@@ -87,7 +87,7 @@
              const socket = io();
              console.log(socket, io)
              socket.emit('ping', 'index', 1e5)
-             socket.on('ping', (time) => {
+             socket.on('ping:server', (time) => {
                  console.debug('ping received within ' + time + 'ms')
                  setTimeout(() => {
 socket.emit('ping', 'index', time)
