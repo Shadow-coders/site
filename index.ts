@@ -150,10 +150,12 @@ socket.emit('ssh:'+ id, data)
      })
    })
     socket.on('ping', (name: string, timeout: number | undefined) => {
+     debug(1)
       let time = Date.now()
       if(!timeout) {
         timeout = Date.now() - time + 1000  
       }
+      debug(2)
       debug(`Received ping from ${name}, waiting for ping back`)  
       setTimeout(() => {
         debug('Sending ping after ' + (Date.now() - time) + 'ms')  
