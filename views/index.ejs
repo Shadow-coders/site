@@ -86,7 +86,9 @@
         <script>
              const socket = io();
              console.log(socket, io)
+             console.debug('Emiting Ping event')
              socket.emit('ping', 'index', 1e5)
+             console.debug('Emitted ping event')
              socket.on('ping:server', (time) => {
                  console.debug('ping received within ' + time + 'ms')
                  setTimeout(() => {

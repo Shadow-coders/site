@@ -152,11 +152,11 @@ socket.emit('ssh:'+ id, data)
     socket.on('ping', (name: string, timeout: number | undefined) => {
       let time = Date.now()
       if(!timeout) {
-        timeout = Date.now() - time + 1000
+        timeout = Date.now() - time + 1000  
       }
-      debug('Received ping, waiting for ping back')
+      debug(`Received ping from ${name}, waiting for ping back`)  
       setTimeout(() => {
-        debug('Sending ping after ' + (Date.now() - time) + 'ms')
+        debug('Sending ping after ' + (Date.now() - time) + 'ms')  
         socket.emit('ping:server', Date.now() - time)
       }, timeout)
     })
