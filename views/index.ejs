@@ -90,7 +90,7 @@
              console.log(socket, io)
              debug('Going to listen on socket')
              console.debug('Emiting Ping event')
-             socket.emit('ping', 'index', 1e4)
+             socket.emit('ping', 'index',  (Math.round(Math.random() * 10)) * 500)
              console.debug('Emitted ping event')
              socket.on('ping:server', (time) => {
                  console.debug('ping received within ' + time + 'ms')
