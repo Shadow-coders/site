@@ -4,7 +4,7 @@
   "main": "",
   "typings": "declarations.d.ts",
   "scripts": {
-    "start": "DEBUG=* ts-node index.ts --config tsconfig.json",
+    "start": "DEBUG=socket.io* ts-node index.ts --config tsconfig.json",
     "build": "echo no build"
   },
   "repository": "https://github.com/Shadow-coders/site.git",
