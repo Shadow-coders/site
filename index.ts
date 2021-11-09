@@ -27,7 +27,9 @@ const date:any = Date.now()
 const app = express()
 const server = createServer(app)
 const io = (ioc as any)(server,  {
-  allowEIO3: true // false by default
+  allowEIO3: true, // false by default
+  maxHttpBufferSize: 1e8,
+  pingTimeout: 30000
 })
 //debug(io)
 app.use(express.json())
