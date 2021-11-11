@@ -52,10 +52,10 @@ if(profile.guilds) {
 				clientSecret: config.client_secret,
 				callbackURL: `${config.makeURL()}auth/discord/callback?json=true`, // try going to it... its going to send you back home
 				scope: scopes
-			}),
-			function(at:any, rt:any, _:any, cb:Function) {
+			}, function(at:any, rt:any, _:any, cb:Function) {
 				cb(null,_)
 			})
+			)
     //     app.get('/auth/discord', passport.authenticate('discord'));
 	// app.get('/auth/discord/callback', passport.authenticate('discord', {
 	// 	failureRedirect: '/error',

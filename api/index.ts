@@ -8,6 +8,7 @@ import auth from './structures/auth'
 import router from './routes/api';  
 import { Canvas } from 'canvas-constructor/cairo'
 import canvas from 'canvas'
+// import UserEndpoints from './routes/user'
 const statusMonitor = require('express-status-monitor')();
 
 canvas.registerFont('api/impact.ttf', { family: 'Impact' });
@@ -33,11 +34,13 @@ app.use(session({
     saveUninitialized: true,
   }));
   app.use( '/v1/', auth )
+  app.use()
+ // app.use('/user/', UserEndpoints) 
   app.set('json spaces', 2)
   app.use(Limiter({ client }))
 app.use('/v1/', router)
   app.get('/', (req:any,res:any) => {
-    const endpoints = ['v1', 'status'].map((e:string) => `/${e}`)
+    const endpoints = ['v1', 'status', 'user'].map((e:string) => `/${e}`)
     res.json({
      endpoints,
      version: 1,
