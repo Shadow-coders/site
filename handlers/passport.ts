@@ -46,13 +46,23 @@ if(profile.guilds) {
                 res.redirect('back')
             }
         }
-        app.get('/auth/discord', passport.authenticate('discord'));
-	app.get('/auth/discord/callback', passport.authenticate('discord', {
-		failureRedirect: '/error',
-	}), function(
-		req:any, res:any) {
-			console.log('Good')
-			res.redirect('/') // Successful auth
-		});
+		passport.use(
+			new DiscordPassport.Strategy({
+				clientID: '765578525818093608',
+				clientSecret: config.client_secret,
+				callbackURL: `${config.makeURL()}auth/discord/callback?json=true`, // try going to it... its going to send you back home
+				scope: scopes
+			}),
+			function(at:any, rt:any, _:any, cb:Function) {
+				cb(null,_)
+			})
+    //     app.get('/auth/discord', passport.authenticate('discord'));
+	// app.get('/auth/discord/callback', passport.authenticate('discord', {
+	// 	failureRedirect: '/error',
+	// }), function(
+	// 	req:any, res:any) {
+	// 		console.log('Good')
+	// 		res.redirect('/') // Successful auth
+	// 	});
         
 }

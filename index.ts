@@ -188,8 +188,13 @@ const Add = async (path:any, prams: any) => {
 }
 RouteHandler(app,client,Add) 
 app.get('/auth/discord', passport.authenticate('discord'));
-	app.get('/auth/discord/callback', passport.authenticate('discord', {
-		failureRedirect: '/'
+	app.get('/auth/discord/callback', (req:any,res:any,next:any) => {
+req.url = '/auth/discord/callback'
+next()
+  },
+  passport.authenticate('discord', {
+		failureRedirect: '/',
+    
 	}), function(
 		req:any, res:any) {
       if(!req.query.json) {
