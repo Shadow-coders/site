@@ -34,7 +34,7 @@ app.use(session({
     saveUninitialized: true,
   }));
   app.use( '/v1/', auth )
-  app.use()
+  //app.use()
  // app.use('/user/', UserEndpoints) 
   app.set('json spaces', 2)
   app.use(Limiter({ client }))
