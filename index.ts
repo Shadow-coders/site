@@ -192,7 +192,12 @@ app.get('/auth/discord', passport.authenticate('discord'));
 		failureRedirect: '/'
 	}), function(
 		req:any, res:any) {
-			res.redirect('/') // Successful auth
+      if(!req.query.json) {
+        res.redirect('/')
+      } else  {
+        res.json(req.user)
+      }
+			 // Successful auth
 		});
 // pp.get('/e', (req:any,res:any) => {
 //     //res.send()
