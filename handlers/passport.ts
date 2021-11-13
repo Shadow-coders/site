@@ -18,6 +18,7 @@ export default function bind(app:any, url?: string) {
     
 	app.use(passport.initialize());
 	app.use(passport.session());
+	console.log(url)
     passport.use(new DiscordPassport.Strategy({
 		clientID: '765578525818093608',
 		clientSecret: config.client_secret,
@@ -35,7 +36,7 @@ if(profile.guilds) {
 			await adduser(profile)
 		}
 			const keys = [accessToken, refreshToken]
-			const data = { akey: keys[1], rkey: keys[2] }
+			const data = { akey: keys[0], rkey: keys[1] }
 			profile.keys = data
 			cb(null, profile)
 		}))

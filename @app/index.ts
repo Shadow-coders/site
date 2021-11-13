@@ -18,7 +18,7 @@ app.use(session({
         secure: false,
        // maxAge: 48 * 60 * 60 * 1000, INFINITE and beyond
     },
-    
+
 }))
 app.get('/', (req:any,res:any) => {
    res.json({success:true})
@@ -32,6 +32,7 @@ app.get('/auth/discord/callback', passport.authenticate('discord', {
     failureRedirect: '/error',
  }), function(
  	req:any, res:any) {
+         console.log('New @app/CALLBACKED req')
      res.json(req.user)
  	});
 
