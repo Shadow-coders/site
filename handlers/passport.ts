@@ -3,7 +3,7 @@ import DiscordPassport from 'passport-discord'
 import config from "../config";
 import adduser from './add'
 var scopes = ['identify', 'guilds', 'guilds.join'];
-export default function bind(app:any) {
+export default function bind(app:any, url?: string) {
     passport.serializeUser(function(user:any, cb:any) {
 		cb(null, user);
 		// db.set('user_' + user.id, user)
@@ -21,7 +21,7 @@ export default function bind(app:any) {
     passport.use(new DiscordPassport.Strategy({
 		clientID: '765578525818093608',
 		clientSecret: config.client_secret,
-		callbackURL: `${config.makeURL()}auth/discord/callback`, // try going to it... its going to send you back home
+		callbackURL: url ? url : `${config.makeURL()}auth/discord/callback` , // try going to it... its going to send you back home
 		scope: scopes
 	},
 
