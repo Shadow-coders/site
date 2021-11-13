@@ -2,6 +2,7 @@ import Client from './structures/client'
 import Discord, { ShardClientUtil } from 'discord.js'
 import express from 'express'
 import child from 'child_process'
+import Eapp from './@app/index'
 import * as fs from 'fs'
 import ApiApp from './api/index'
 import CdnApp from './cdn-fix/index'
@@ -78,6 +79,7 @@ shadow.on('ready', () => {
   Logger.ready(shadow)
 
 })
+app.use('/@app', Eapp)
 const client:any = new Client()
 const conn = new SSh.Client()
 
