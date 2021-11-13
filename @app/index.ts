@@ -27,8 +27,8 @@ app.get('/getuser', (req:any, res:any) => {
     if(!req.user) res.status(400).json({ loggedin:false })
     res.json(req.user)
 })
-Passport(app, config.makeURL() + '/@app/auth/discord/callback')
-app.get('/auth/discord/callback', passport.authenticate('discord', {
+Passport(app, config.makeURL() + '@app/auth/discord/callback', { name: '@app/discord'})
+app.get('/auth/discord/callback', passport.authenticate('@app/discord', {
     failureRedirect: '/error',
  }), function(
  	req:any, res:any) {

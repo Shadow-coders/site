@@ -3,13 +3,13 @@ import DiscordPassport from 'passport-discord'
 import config from "../config";
 import adduser from './add'
 var scopes = ['identify', 'guilds', 'guilds.join'];
-export default function bind(app:any, url?: string) {
+export default function bind(app:any, url?: string, ops?: any) {
     passport.serializeUser(function(user:any, cb:any) {
 		cb(null, user);
 		// db.set('user_' + user.id, user)
 	});
-
-
+if(!ops) ops = { name: 'discord' };
+let { name } = ops;
 
 	passport.deserializeUser(function(id:any, cb:any) {
 		cb(null, id);
@@ -18,8 +18,8 @@ export default function bind(app:any, url?: string) {
     
 	app.use(passport.initialize());
 	app.use(passport.session());
-	console.log(url)
-    passport.use(new DiscordPassport.Strategy({
+	console.log(url, name);
+    passport.use(name, new DiscordPassport.Strategy({
 		clientID: '765578525818093608',
 		clientSecret: config.client_secret,
 		callbackURL: url ? url : `${config.makeURL()}auth/discord/callback` , // try going to it... its going to send you back home
@@ -47,7 +47,7 @@ if(profile.guilds) {
                 res.redirect('back')
             }
         }
-    app.get('/auth/discord', passport.authenticate('discord'));
+    app.get('/auth/discord', passport.authenticate(name || 'discord'));
 	// app.get('/auth/discord/callback', passport.authenticate('discord', {
 	// 	failureRedirect: '/error',
 	// }), function(
