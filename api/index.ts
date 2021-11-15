@@ -21,7 +21,7 @@ console.log('API bot connected')
 client.login(config.bot.token)
 const app = express()
 export default app;
-app.use(statusMonitor);
+//app.use(statusMonitor);
 app.on('mount', () => {
     console.log('Mounted API!')
 })
